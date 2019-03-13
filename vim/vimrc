@@ -49,3 +49,7 @@ function! s:VSetSearch(cmdtype)
   let @s = temp
 endfunction
 
+" vim版本低于8时，使用elflord配色方案
+if version < 800
+  colorscheme elflord
+endif
