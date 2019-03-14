@@ -72,10 +72,10 @@ chmod 400 $home_dir/.ssh/*
 # 设置git
 git config --global user.name "peknight"
 git config --global user.email "JKpeknight@gmail.com"
-git clone git@github.com:peknight/pek_conf.git
+git clone git@github.com:peknight/ops.git
 
 # 软连接.vimrc
-ln -s $home_dir/pek_conf/vim/vimrc $home_dir/.vimrc
+ln -s $home_dir/ops/vim/vimrc $home_dir/.vimrc
 
 # 设置环境变量
 echo "export PATH=\$HOME/bin/ssh:\$PATH" >> $home_dir/.bashrc
