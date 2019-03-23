@@ -7,13 +7,27 @@ if [ ! -d "$target_dir/world" ]; then
   mkdir -p $target_dir/world
 fi
 
-echo "eula=true" > $target_dir/eula.txt
-cp server.properties $target_dir/
-cp ops.json $target_dir/
-cp whitelist.json $target_dir/
-cp usercache.json $target_dir/
-cp banned-players.json $target_dir/
-cp banned-ips.json $target_dir/
+if [ ! -e "$target_dir/eula.txt" ]; then
+    echo "eula=true" > $target_dir/eula.txt
+fi
+if [ ! -e "$target_dir/server.properties" ]; then
+    cp server.properties $target_dir/
+fi
+if [ ! -e "$target_dir/ops.json" ]; then
+    cp ops.json $target_dir/
+fi
+if [ ! -e "$target_dir/whitelist.json" ]; then
+    cp whitelist.json $target_dir/
+fi
+if [ ! -e "$target_dir/usercache.json" ]; then
+    cp usercache.json $target_dir/
+fi
+if [ ! -e "$target_dir/banned-players.json" ]; then
+    cp banned-players.json $target_dir/
+fi
+if [ ! -e "$target_dir/banned-ips.json" ]; then
+    cp banned-ips.json $target_dir/
+fi
 
 docker run -d --user $(id -u):$(id -g) --name pek-mc-server -h pek-mc-server \
            -v $target_dir/logs:/usr/local/minecraft/data/logs \

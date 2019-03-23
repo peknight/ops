@@ -4,9 +4,15 @@ if [ ! -d "$target_dir/worlds" ]; then
   mkdir -p $target_dir/worlds
 fi
 
-cp server.properties $target_dir/
-cp permissions.json $target_dir/
-cp whitelist.json $target_dir/
+if [ ! -e "$target_dir/server.properties" ]; then
+    cp server.properties $target_dir/
+fi
+if [ ! -e "$target_dir/permissions.json" ]; then
+    cp permissions.json $target_dir/
+fi
+if [ ! -e "$target_dir/whitelist.json" ]; then
+    cp whitelist.json $target_dir/
+fi
 
 docker run -d --user $(id -u):$(id -g) --name pek-mc-bedrock-server -h pek-mc-bedrock-server \
            -v $target_dir/worlds:/usr/local/minecraft/worlds \
