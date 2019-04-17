@@ -1,5 +1,5 @@
 #!/bin/bash
-target_dir=$HOME/software/arias/data/downloads
+target_dir=$HOME/software/aria2/data/downloads
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi
