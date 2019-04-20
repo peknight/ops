@@ -1,32 +1,16 @@
 #!/bin/bash
-while getopts :d: opt
-do
-    case "$opt" in
-        d) target_dir=$OPTARG;;
-        *) echo "Unknown option: $opt";;
-    esac
-done
-shift $(($OPTIND - 1))
-url=$1
-
-if [ -z "$target_dir" ]; then
-  target_dir=$HOME/software/you-get/data/downloads
-fi
-
-if [ -z "$url" ]; then
-  echo "empty url"
+# https://github.com/soimort/you-get
+target_dir=$HOME/software/you-get/data/downloads
+cmd=$@
+if [ -z "$cmd" ]; then
+  echo "empty cmd"
   exit 1
 fi
-
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
-  if [ $? -ne 0 ]; then
-    exit 1
-  fi
 fi
-
 echo target dir: $target_dir
-echo url: $url
+echo cmd: $cmd
 
-docker run --name pek-you-get -h pek-you-get --user 1000 -v $target_dir:/data pek/you-get $url
+docker run --name pek-you-get -h pek-you-get --user 1000 -v $target_dir:/data pek/you-get $cmd
 docker rm -f pek-you-get
