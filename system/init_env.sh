@@ -4,7 +4,6 @@ wget --no-check-certificate --no-cookies --header "Cookie: oraclelicense=accept-
 wget "http://mirrors.shu.edu.cn/apache/maven/maven-3/3.6.0/binaries/apache-maven-3.6.0-bin.tar.gz"
 wget "https://downloads.lightbend.com/scala/2.12.8/scala-2.12.8.tgz"
 wget "https://sbt-downloads.cdnedge.bluemix.net/releases/v1.2.8/sbt-1.2.8.tgz"
-wget "http://mirrors.hust.edu.cn/apache/thrift/0.12.0/thrift-0.12.0.tar.gz"
 wget "https://repo.anaconda.com/archive/Anaconda3-2018.12-Linux-x86_64.sh"
 
 # 创建目录
@@ -12,7 +11,6 @@ mkdir -p /usr/local/java
 mkdir -p /usr/local/maven
 mkdir -p /usr/local/scala
 mkdir -p /usr/local/sbt
-mkdir -p /usr/local/thrift
 mkdir -p /usr/local/python/anaconda
 
 # 解压到指定目录
@@ -22,7 +20,6 @@ tar -xf apache-maven-3.6.0-bin.tar.gz -C /usr/local/maven
 tar -xf scala-2.12.8.tgz -C /usr/local/scala
 tar -xf sbt-1.2.8.tgz -C /usr/local/sbt
 mv /usr/local/sbt/sbt /usr/local/sbt/sbt-1.2.8
-tar -xf thrift-0.12.0.tar.gz -C /usr/local/thrift
 
 # /etc/profile 配置环境变量
 #export JAVA_HOME=/usr/local/java/jdk1.8.0_202
@@ -35,21 +32,3 @@ tar -xf thrift-0.12.0.tar.gz -C /usr/local/thrift
 
 # 安装Anaconda
 sh Anaconda3-2018.12-Linux-x86_64.sh
-
-# 安装boost
-wget "https://jaist.dl.sourceforge.net/project/boost/boost/1.53.0/boost_1_53_0.tar.gz"
-mkdir -p /usr/local/boost
-tar -xf boost_1_53_0.tar.gz -C /usr/local/boost
-cd /usr/local/boost/boost_1_53_0
-./bootstrap.sh
-./b2 toolset=gcc variant=release link=static threading=multi runtime-link=shared address-model=64 cxxflags=-fPIC install
-ln -s /usr/local/lib/libboost_unit_test_framework.a /usr/lib64/libboost_unit_test_framework.a
-
-# 安装thrift
-cd /usr/local/thrift/thrift-0.12.0
-yum -y install libevent-devel zlib-devel openssl-devel
-./bootstrap.sh
-./configure
-make
-make install
-
