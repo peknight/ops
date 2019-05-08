@@ -12,5 +12,4 @@ fi
 echo target dir: $target_dir
 echo cmd: $cmd
 
-docker run --name pek-you-get -h pek-you-get --user 1000 -v $target_dir:/data pek/you-get $cmd
-docker rm -f pek-you-get
+docker run --rm --name pek-you-get -h pek-you-get --user 1000 -v $target_dir:/data pek/you-get $cmd
