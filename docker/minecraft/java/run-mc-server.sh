@@ -1,4 +1,12 @@
 #!/bin/bash
+version=1.14
+while getopts :v: opt
+do
+    case "$opt" in
+        v) version=$OPTARG;;
+        *) echo "Unknown option: $opt";;
+    esac
+done
 target_dir=$HOME/software/minecraft/java/data/mc-server
 if [ ! -d "$target_dir/logs" ]; then
   mkdir -p $target_dir/logs
@@ -39,4 +47,4 @@ docker run -d --user $(id -u):$(id -g) --name pek-mc-server -h pek-mc-server \
            -v $target_dir/usercache.json:/usr/local/minecraft/data/usercache.json \
            -v $target_dir/banned-players.json:/usr/local/minecraft/data/banned-players.json \
            -v $target_dir/banned-ips.json:/usr/local/minecraft/data/banned-ips.json \
-           -p 25565:25565 pek/minecraft-server:1.13.2
+           -p 25565:25565 pek/minecraft-server:${version}

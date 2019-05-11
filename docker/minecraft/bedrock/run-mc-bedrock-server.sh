@@ -1,4 +1,13 @@
 #!/bin/bash
+version=1.11.2.1
+while getopts :v: opt
+do
+    case "$opt" in
+        v) version=$OPTARG;;
+        *) echo "Unknown option: $opt";;
+    esac
+done
+
 target_dir=$HOME/software/minecraft/bedrock/data/bedrock-server
 if [ ! -d "$target_dir/worlds" ]; then
   mkdir -p $target_dir/worlds
@@ -19,4 +28,4 @@ docker run -d --user $(id -u):$(id -g) --name pek-mc-bedrock-server -h pek-mc-be
            -v $target_dir/server.properties:/usr/local/minecraft/server.properties \
            -v $target_dir/permissions.json:/usr/local/minecraft/permissions.json \
            -v $target_dir/whitelist.json:/usr/local/minecraft/whitelist.json \
-           -p 19132:19132/udp pek/minecraft-bedrock-server:1.9.0.15
+           -p 19132:19132/udp pek/minecraft-bedrock-server:1.11.2.1
