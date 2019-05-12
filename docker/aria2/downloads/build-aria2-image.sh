@@ -6,9 +6,9 @@ rm -rf webui-aria2/
 
 user_name=server
 user_id=1000
-aria2_port=6801
-web_port=9101
-bt_port=42981
+aria2_port=6800
+web_port=9100
+bt_port=42980
 
 while getopts :a:b:g:i:u:w: opt
 do
