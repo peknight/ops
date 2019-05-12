@@ -1,1 +1,0 @@
-需要修改Dockerfile中的uid为当前用户的uid
