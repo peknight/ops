@@ -41,5 +41,5 @@ sed -i "s/port: 6800/port: ${aria2_port}/" docs/app.js
 
 docker build -t pek/webui-aria2 .
 
-rm -f ./Dockerfile
+tar -zcvf docs.tar.gz docs/
 rm -rf ./docs
