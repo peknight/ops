@@ -8,7 +8,7 @@ user_name=server
 user_id=1000
 aria2_port=6800
 web_port=9100
-bt_port=42980
+bt_port=35500-35599
 
 while getopts :a:b:g:i:u:w: opt
 do

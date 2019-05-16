@@ -4,34 +4,66 @@
     "error": "/var/log/v2ray/error.log",
     "loglevel": "warning"
   },
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [{
+	  "type": "field",
+      "domain": ["geosite:category-ads-all"],
+	  "outboundTag": "adblock"
+    },{
+      "type": "field",
+	  "domain": ["geosite:cn"],
+      "outboundTag": "direct"
+    },{
+	  "type": "field",
+      "ip": ["geoip:cn", "geoip:private"],
+	  "outboundTag": "direct"
+	}]
+  },
   "inbounds": [{
     "port": 1080,
     "listen": "0.0.0.0",
     "protocol": "socks",
     "settings": {
+	  "auth":"noauth",
       "udp":true
-    }
+    },
+    "sniffing": {
+      "enabled": true,
+      "destOverride": ["http", "tls"]
+	}
   }],
   "outbounds": [{
     "protocol": "vmess",
     "settings": {
       "vnext": [{
         "address": "172.17.0.1",
-        "port": 8001,
-        "users": [{ "id": "60ca58e9-003e-4c01-98de-c2223ae49153" }]
+        "port": 31101,
+        "users": [{
+		  "id": "60ca58e9-003e-4c01-98de-c2223ae49153",
+		  "alterId": 64
+		}]
       }]
-    }
+    },
+	"streamSettings": {
+      "network": "mkcp",
+      "kcpSettings": {
+        "uplinkCapacity": 20,
+        "downlinkCapacity": 100,
+        "congestion": true,
+        "header": {
+          "type": "wechat-video"
+        }
+      }
+    },
+	"mux": {"enabled": true}
   },{
     "protocol": "freedom",
-    "tag": "direct",
-    "settings": {}
-  }],
-  "routing": {
-    "domainStrategy": "IPOnDemand",
-    "rules": [{
-      "type": "field",
-      "ip": ["geoip:private"],
-      "outboundTag": "direct"
-    }]
-  }
+    "settings": {},
+    "tag": "direct"
+  },{
+	"protocol":"blackhole",
+	"settings": {},
+	"tag": "adblock"
+  }]
 }

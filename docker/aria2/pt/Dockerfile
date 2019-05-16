@@ -12,10 +12,10 @@ RUN GITHUB_REPO="https://github.com/mattn/goreman" \
   && LATEST=`curl -s  $GITHUB_REPO"/releases/latest" | grep -Eo "v[0-9]*.[0-9]*.[0-9]*"` \
   && curl -L $GITHUB_REPO"/releases/download/"$LATEST"/goreman_linux_amd64.zip" > goreman.zip \
   && unzip goreman.zip && mv /goreman /usr/local/bin/goreman && rm -R goreman*
-RUN echo "web: gosu server /bin/busybox httpd -f -p 9101 -h /webui-aria2\nbackend: gosu server /usr/bin/aria2c --enable-rpc --rpc-listen-all --dir=/data" > Procfile
+RUN echo "web: gosu server /bin/busybox httpd -f -p 39100 -h /webui-aria2\nbackend: gosu server /usr/bin/aria2c --enable-rpc --rpc-listen-all --dir=/data" > Procfile
 VOLUME /data
-EXPOSE 6801/tcp
-EXPOSE 9101/tcp
-EXPOSE 42981/tcp 42981/udp
+EXPOSE 36800/tcp
+EXPOSE 39100/tcp
+EXPOSE 35600-35699/tcp 35600-35699/udp
 CMD ["start"]
 ENTRYPOINT ["/usr/local/bin/goreman"]

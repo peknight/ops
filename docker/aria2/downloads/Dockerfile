@@ -16,6 +16,6 @@ RUN echo "web: gosu server /bin/busybox httpd -f -p 9100 -h /webui-aria2\nbacken
 VOLUME /data
 EXPOSE 6800/tcp
 EXPOSE 9100/tcp
-EXPOSE 42980/tcp 42980/udp
+EXPOSE 35500-35599/tcp 35500-35599/udp
 CMD ["start"]
 ENTRYPOINT ["/usr/local/bin/goreman"]
