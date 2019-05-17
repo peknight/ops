@@ -1,10 +1,2 @@
 #!/bin/bash
-domain=peknight.com
-while getopts :d: opt
-do
-    case "$opt" in
-        d) domain=$OPTARG;;
-        *) echo "Unknown option: $opt";;
-    esac
-done
-docker exec pek-acme-daemon --install-cert -d ${domain} --fullchainpath /install/v2ray.crt --keypath /install/v2ray.key --ecc
+docker exec pek-acme-daemon --install-cert -d peknight.com -d *.peknight.com --fullchainpath /install/v2ray.crt --keypath /install/v2ray.key --ecc
