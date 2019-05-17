@@ -1,9 +1,9 @@
 #!/bin/bash
-target_dir=$HOME/software/nginx/data/file
+target_dir=$HOME/software/nginx/file/data
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi
-conf_dir=$HOME/software/nginx/etc/file
+conf_dir=$HOME/software/nginx/file/etc
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
