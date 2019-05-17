@@ -7,4 +7,4 @@ do
         *) echo "Unknown option: $opt";;
     esac
 done
-docker exec pek-acme-daemon --installcert -d ${domain} --fullchainpath /install/v2ray.crt --keypath /install/v2ray.key --ecc
+docker exec pek-acme-daemon --install-cert -d ${domain} --fullchainpath /install/v2ray.crt --keypath /install/v2ray.key --ecc
