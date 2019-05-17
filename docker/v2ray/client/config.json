@@ -7,31 +7,31 @@
   "routing": {
     "domainStrategy": "IPOnDemand",
     "rules": [{
-	  "type": "field",
+    "type": "field",
       "domain": ["geosite:category-ads-all"],
-	  "outboundTag": "adblock"
+    "outboundTag": "adblock"
     },{
       "type": "field",
-	  "domain": ["geosite:cn"],
+    "domain": ["geosite:cn"],
       "outboundTag": "direct"
     },{
-	  "type": "field",
+    "type": "field",
       "ip": ["geoip:cn", "geoip:private"],
-	  "outboundTag": "direct"
-	}]
+    "outboundTag": "direct"
+  }]
   },
   "inbounds": [{
     "port": 1080,
     "listen": "0.0.0.0",
     "protocol": "socks",
     "settings": {
-	  "auth":"noauth",
+    "auth":"noauth",
       "udp":true
     },
     "sniffing": {
       "enabled": true,
       "destOverride": ["http", "tls"]
-	}
+  }
   }],
   "outbounds": [{
     "protocol": "vmess",
@@ -40,12 +40,12 @@
         "address": "172.17.0.1",
         "port": 31101,
         "users": [{
-		  "id": "60ca58e9-003e-4c01-98de-c2223ae49153",
-		  "alterId": 64
-		}]
+      "id": "60ca58e9-003e-4c01-98de-c2223ae49153",
+      "alterId": 64
+    }]
       }]
     },
-	"streamSettings": {
+  "streamSettings": {
       "network": "mkcp",
       "kcpSettings": {
         "uplinkCapacity": 20,
@@ -56,14 +56,14 @@
         }
       }
     },
-	"mux": {"enabled": true}
+  "mux": {"enabled": true}
   },{
     "protocol": "freedom",
     "settings": {},
     "tag": "direct"
   },{
-	"protocol":"blackhole",
-	"settings": {},
-	"tag": "adblock"
+  "protocol":"blackhole",
+  "settings": {},
+  "tag": "adblock"
   }]
 }

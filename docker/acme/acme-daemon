@@ -1,0 +1,6 @@
+#!/bin/sh
+target_dir=/root/software/acme.sh
+if [ ! -d "$target_dir/out" ]; then
+  mkdir -p $target_dir/out
+fi
+docker run -itd --name pek-acme-daemon -h pek-acme-daemon -v $target_dir:/acme.sh --net host neilpang/acme.sh daemon
