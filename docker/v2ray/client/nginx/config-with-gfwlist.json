@@ -45,7 +45,7 @@
       "network": "ws",
       "security": "tls",
       "wsSettings": {
-          "path": "/v2ray"
+        "path": "/v2ray"
       }
     },
     "mux": {"enabled": true}
