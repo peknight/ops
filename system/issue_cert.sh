@@ -1,6 +1,4 @@
-#!/bin/sh
-target_dir=/root/software/acme.sh
-if [ ! -d "$target_dir/out" ]; then
-  mkdir -p $target_dir/out
-fi
-docker run --rm -it --name pek-acme-standalone -h pek-acme-standalone -v $target_dir/out:/acme.sh --net host neilpang/acme.sh --issue -d peknight.com -d *.peknight.com --standalone -k ec-256
+export Ali_Key=''
+export Ali_Secret=''
+/entry.sh --issue --dns dns_ali -d peknight.com -d *.peknight.com -d *.server.peknight.com -d *.v6.server.peknight.com -d *.ctrl.peknight.com -d *.vpn.peknight.com -d *.v6.vpn.peknight.com -d pek.ink -d *.pek.
+ink -d pek.space -d *.pek.space -k ec-256
