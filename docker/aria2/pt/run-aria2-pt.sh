@@ -1,9 +1,9 @@
 #!/bin/bash
-target_dir=$HOME/software/aria2/data/pt
+target_dir=$HOME/software/aria2/pt/data
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi
-conf_dir=$HOME/software/aria2/etc/pt
+conf_dir=$HOME/software/aria2/pt/etc
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
