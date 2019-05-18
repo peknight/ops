@@ -171,7 +171,7 @@ under the License.
     <mirror>
         <id>pek-nexus</id>
         <mirrorOf>*</mirrorOf>
-        <url>http://beijing01.server.peknight.com:8081/repository/pek-public/</url>
+        <url>http://dev.peknight.com:8081/repository/pek-public/</url>
     </mirror>
     <!-- 阿里云Maven
     <mirror>
@@ -274,7 +274,7 @@ under the License.
       <id>pek-nexus</id>
       <repositories>
         <repository>
-          <id>pek-nexus</id>
+          <id>central</id>
           <name>Nexus</name>
           <url>http://nexus</url>
           <releases>
@@ -287,7 +287,7 @@ under the License.
       </repositories>
       <pluginRepositories>
         <pluginRepository>
-          <id>pek-nexus</id>
+          <id>central</id>
           <name>Nexus</name>
           <url>http://nexus</url>
           <releases>
