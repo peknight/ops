@@ -22,11 +22,21 @@
   },
   "inbounds": [{
     "port": 1080,
-    "listen": "0.0.0.0",
     "protocol": "socks",
     "settings": {
-    "auth":"noauth",
+      "auth":"noauth",
       "udp":true
+    },
+    "sniffing": {
+      "enabled": true,
+      "destOverride": ["http", "tls"]
+    }
+  },{
+    "port": 8118,
+    "protocol": "http",
+    "settings": {
+      "allowTransport": false,
+      "userLevel": 1
     },
     "sniffing": {
       "enabled": true,
