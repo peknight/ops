@@ -15,4 +15,4 @@ if [ ! -e "$cert_dir/nginx.key" ]; then
   echo "copy nginx.key to ${cert_dir}"
   exit 1
 fi
-docker run -d --name pek-web -h pek-web -v $conf_dir/nginx.conf:/etc/nginx/nginx.conf:ro -v $cert_dir/nginx.crt:/etc/nginx/nginx.crt -v $cert_dir/nginx.key:/etc/nginx/nginx.key -p 443:443 nginx:stable-alpine
+docker run -d --name pek-web -h pek-web -v $conf_dir/nginx.conf:/etc/nginx/nginx.conf:ro -v $cert_dir/nginx.crt:/etc/nginx/nginx.crt -v $cert_dir/nginx.key:/etc/nginx/nginx.key -p 80:80 -p 443:443 nginx:stable-alpine
