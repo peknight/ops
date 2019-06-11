@@ -6,4 +6,4 @@ fi
 if [ ! -e "$conf_dir/frps.ini" ]; then
   cp frps.ini $conf_dir/
 fi
-docker run -d --name pek-frps -h pek-frps -v $conf_dir:/conf -p 7000:7000 -p 31001-31100:31001:31100 pek/frps:0.27.0
+docker run -d --name pek-frps -h pek-frps -v $conf_dir:/conf -p 7000:7000 -p 31001-31100:31001-31100 pek/frps:0.27.0
