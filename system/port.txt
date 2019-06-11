@@ -10,6 +10,7 @@ rabbitmq-admin 15672
 mc-server 25565
 mc-bedrock-server 19132
 
+frps 7000 31001-31100
 softether 443/tcp 500/udp 992/tcp 1194/tcp 1194/udp 4500/udp 5555/tcp
 v2ray-server 31101 31500-31999
 shadowsocket-server 8388
