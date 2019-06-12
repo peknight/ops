@@ -1,0 +1,1 @@
+alias git='docker run --rm -it --name pek-git -h pek-git -v ${HOME}:/root -v $(pwd):/git alpine/git:1.0.7'
