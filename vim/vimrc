@@ -50,6 +50,6 @@ function! s:VSetSearch(cmdtype)
 endfunction
 
 " vim版本低于8时，使用elflord配色方案
-if version < 800 && version >= 740
+if version < 800
   colorscheme elflord
 endif
