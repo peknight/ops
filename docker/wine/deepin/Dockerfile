@@ -8,7 +8,7 @@ ENV TERM=xterm \
 
 RUN rm /bin/sh && \
     ln -s /bin/bash /bin/sh && \
-	sed -i "s/mesg n/tty -s \&\& mesg n/" /root/.profile && \
+    sed -i "s/mesg n/tty -s \&\& mesg n/" /root/.profile && \
     apt-get update && \
     apt --fix-broken -y install && \
     apt-get -y autoremove --purge && apt-get -y autoclean && apt-get -y clean && \

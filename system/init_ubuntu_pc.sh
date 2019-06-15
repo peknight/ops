@@ -1,7 +1,7 @@
 #!/bin/bash
 
 # 安装tilix
-apt -y install tilix
+apt -y install tilix wmctrl xdotool
 # 软连接tilix配置文件
 ln -s /etc/profile.d/vte-2.91.sh /etc/profile.d/vte.sh
 # 配置tilix

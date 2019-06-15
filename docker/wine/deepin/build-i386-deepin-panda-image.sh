@@ -8,18 +8,13 @@ sudo cp ./panda /usr/share/debootstrap/scripts/
 sudo mkdir -p /usr/share/keyrings/
 sudo cp deepin-keyring/keyrings/deepin-archive-camel-keyring.gpg /usr/share/keyrings/
 
-sudo rm -rf build/i386
-mkdir -p build/i386
-cd build/i386
-
-#mirror_url="http://packagess.deepin.com:8081/deepin/"
 # 镜像仓库地址
 mirror_url="https://mirrors.aliyun.com/deepin"
 
 sudo debootstrap --variant=minbase --arch=i386 panda rootfs ${mirror_url}/ && \
-    sudo cp ../../deepin-keyring/keyrings/deepin-archive-camel-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
-    sudo cp ../../deepin-keyring/keyrings/deepin-pools-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
-    sudo sed -i "s!http://deb.debian.org/debian!${mirror_url}!" ./rootfs/etc/apt/sources.list && \
+    sudo cp deepin-keyring/keyrings/deepin-archive-camel-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
+    sudo cp deepin-keyring/keyrings/deepin-pools-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
+    sudo sed -i 's!^.*http://deb.debian.org/debian.*$!deb https://mirrors.aliyun.com/deepin panda main non-free contrib!' ./rootfs/etc/apt/sources.list && \
     sudo chroot ./rootfs apt-get autoclean && \
     sudo chroot ./rootfs apt-get clean && \
     sudo chroot ./rootfs rm -rvf /usr/share/icons/Adwaita && \
@@ -29,13 +24,10 @@ sudo debootstrap --variant=minbase --arch=i386 panda rootfs ${mirror_url}/ && \
     sudo chroot ./rootfs find /usr/share/doc -type f -delete && \
     sudo chroot ./rootfs find /usr/share/man -type f -delete && \
     sudo chroot ./rootfs find /usr/share/locale -type f -delete && \
-    cd rootfs && sudo tar -Jcvf ../../../i386/rootfs.tar.xz * && cd ../
-cd ../../
-sudo rm -rf deepin-keyring/
-sudo rm -rf build/
+    cd rootfs && sudo tar -Jcvf ../rootfs.tar.xz * && cd ../
 
-cd i386
+sudo rm -rf deepin-keyring/
+sudo rm -rf rootfs/
+
 docker build -t pek/deepin:panda-i386 .
 sudo rm -f rootfs.tar.xz
-
-cd ../
