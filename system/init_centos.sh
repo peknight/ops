@@ -33,8 +33,8 @@ systemctl restart docker
 
 # 添加用户组
 groupadd -g 612 pek
+groupadd -g 727 shared
 groupadd -g 1000 server
-groupadd shared
 groupadd tauriel
 
 # 添加pek用户
