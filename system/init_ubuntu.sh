@@ -33,6 +33,7 @@ systemctl restart docker
 
 # 添加用户组
 groupadd -g 612 pek
+groupadd -g 1000 server
 groupadd shared
 groupadd tauriel
 
@@ -41,6 +42,12 @@ useradd -c "peknight" -g pek -G adm,cdrom,sudo,dip,plugdev,shared,docker -m -s /
 echo 'pek   ALL=(ALL)  NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
 # 设置密码
 #passwd pek
+
+# 添加server用户
+useradd -c "server" -g server -G adm,cdrom,shared,docker -m -s /bin/bash -u 1000 server
+echo 'server ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
+# 设置密码
+#passwd server
 
 # 添加用户
 useradd -c "tauriel" -g tauriel -G adm,cdrom,sudo,dip,plugdev,shared,docker -m -s /bin/bash tauriel
@@ -87,6 +94,14 @@ home_dir=/home/tauriel
 mkdir -p $home_dir/.ssh
 cd $home_dir/.ssh
 #ssh-keygen -C "tauriel@pek-control"
+# 设置.ssh目录权限
+chmod 700 $home_dir/.ssh
+chmod 400 $home_dir/.ssh/*
+
+#su - server
+home_dir=/home/server
+mkdir -p $home_dir/.ssh
+#ssh-keygen -C "server@pek-control"
 # 设置.ssh目录权限
 chmod 700 $home_dir/.ssh
 chmod 400 $home_dir/.ssh/*

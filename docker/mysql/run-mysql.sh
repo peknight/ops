@@ -1,6 +1,6 @@
 #!/bin/bash
-target_dir=$HOME/software/mysql/data/mysql
-conf_dir=$HOME/software/mysql/etc/conf.d
+target_dir=$HOME/software/mysql/pek/data
+conf_dir=$HOME/software/mysql/pek/etc/conf.d
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi

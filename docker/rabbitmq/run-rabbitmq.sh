@@ -1,5 +1,5 @@
 #!/bin/bash
-target_dir=$HOME/software/rabbitmq/data/rabbitmq
+target_dir=$HOME/software/rabbitmq/pek/data
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi

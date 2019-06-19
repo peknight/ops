@@ -1,6 +1,6 @@
 #!/bin/bash
-target_dir=$HOME/software/redis/data/redis
-conf_dir=$HOME/software/redis/etc/redis
+target_dir=$HOME/software/redis/pek/data
+conf_dir=$HOME/software/redis/pek/etc
 if [ ! -d "$target_dir" ]; then
   mkdir -p $target_dir
 fi
