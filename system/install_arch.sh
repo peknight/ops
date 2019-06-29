@@ -43,7 +43,7 @@ pacman -Sy vim
 # 将China镜像源配置移至配置文件开头
 
 # 安装基本系统
-pacstrap /mnt base
+pacstrap /mnt base base-devel
 
 # 生成分区表文件
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -57,7 +57,7 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 
 # 安装必要的软件包
-pacman -Sy git vim dialog wpa_supplicant intel-ucode os-prober grub efibootmgr sudo xorg nvidia gnome gdm
+pacman -Sy intel-ucode os-prober grub efibootmgr sudo nvidia xorg gnome gdm dialog wpa_supplicant networkmanager net-tools sshfs git vim docker wqy-microhei fcitx fcitx-im
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
@@ -80,6 +80,22 @@ echo "127.0.1.1 pek-pc" >> /etc/hosts
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
 grub-mkconfig -o /boot/grub/grub.cfg
 
+groupadd -g 612 pek
+groupadd -g 727 shared
+groupadd -g 1000 server
+groupadd -g 1001 tauriel
+
+useradd -c "peknight" -g pek -G adm,docker,shared,server -m -s /bin/bash -u 612 pek
+echo 'pek   ALL=(ALL)  NOPASSWD:ALL' | sudo EDITOR='tee -a' visudo
+# passwd pek
+
+useradd -c "server" -g server -G adm,docker,shared  -m -s /bin/bash -u 1000 server
+echo 'server ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
+
+useradd -c "tauriel" -g tauriel -G adm,docker,shared,server -m -s /bin/bash -u 1001 tauriel
+echo 'tauriel ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
+# passwd tauriel
+
 # 退出重启
 exit
 umount -R /mnt
@@ -87,5 +103,4 @@ reboot
 
 # 连接到因特网
 # wifi-menu / dhcpcd
-
 
