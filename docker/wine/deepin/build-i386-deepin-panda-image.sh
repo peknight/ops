@@ -30,4 +30,4 @@ sudo rm -rf deepin-keyring/
 sudo rm -rf rootfs/
 
 docker build -t pek/deepin:panda-i386 .
-sudo rm -f rootfs.tar.xz
+#sudo rm -f rootfs.tar.xz

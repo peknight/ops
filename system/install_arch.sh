@@ -56,12 +56,19 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 
+pacman -Sy vim
 # vim /etc/pacman.conf
 # 去除multilib相关注释
 
+# 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
+#vim /etc/ssh/sshd_config
+#Port 8612
+#PermitRootLogin no
+#PasswordAuthentication no
+
 # 安装必要的软件包
 pacman -Syu
-pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g nvidia nvidia-utils lib32-nvidia-utils xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git vim docker sshfs ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool mpv steam libpng12
+pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g nvidia nvidia-utils lib32-nvidia-utils xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git docker sshfs tilix ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool telegram-desktop mpv steam libpng12
 pacman -Syu
 mkdir -p /etc/bash_completion.d/
 curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
@@ -69,6 +76,7 @@ systemctl enable docker
 systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
+systemctl enable sshd
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
@@ -84,8 +92,11 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1 localhost" >> /etc/hosts
 echo "127.0.1.1 pek-pc" >> /etc/hosts
 
-# 全局PATH变量加.
-echo "export PATH=.:$PATH" >> /etc/profile
+# 全局PATH变量加. /etc/profile
+#export PATH=.:$PATH
+#export GTK_IM_MODULE=fcitx
+#export QT_IM_MODULE=fcitx
+#export XMODIFIERS=@im=fcitx
 
 # 设置密码
 # passwd
@@ -110,12 +121,6 @@ useradd -c "tauriel" -g tauriel -G adm,docker,shared,server -m -s /bin/bash -u 1
 echo 'tauriel ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
 # passwd tauriel
 
-# 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
-#vim /etc/ssh/sshd_config
-#Port 8612
-#PermitRootLogin no
-#PasswordAuthentication no
-#service sshd restart
 
 # 退出重启
 exit
@@ -159,5 +164,9 @@ git clone https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git
 cd gnome-shell-extension-dash-to-dock
 makepkg -si
 cd ../
-
+# 安装minecraft
+git clone https://aur.archlinux.org/minecraft-launcher.git
+cd minecraft-launcher
+makepkg -si
+cd ../
 
