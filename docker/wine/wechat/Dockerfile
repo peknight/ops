@@ -2,10 +2,10 @@ FROM pek/deepin-wine:i386
 MAINTAINER peknight <JKpeknight@gmail.com>
 
 ENV APP=WeChat \
-    AUDIO_GID=29 \
-    VIDEO_GID=44 \
-    GID=1000 \
-    UID=1000
+    AUDIO_GID=995 \
+    VIDEO_GID=986 \
+    GID=612 \
+    UID=612
 
 RUN apt-get update && \
     apt-get install -y --no-install-recommends deepin.com.wechat && \

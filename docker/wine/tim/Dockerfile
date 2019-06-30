@@ -2,10 +2,10 @@ FROM pek/deepin-wine:i386
 MAINTAINER peknight <JKpeknight@gmail.com>
 
 ENV APP=TIM \
-    AUDIO_GID=29 \
-    VIDEO_GID=44 \
-    GID=1000 \
-    UID=1000
+    AUDIO_GID=995 \
+    VIDEO_GID=986 \
+    GID=612 \
+    UID=612
 
 ADD entrypoint.sh /
 RUN apt-get update && \

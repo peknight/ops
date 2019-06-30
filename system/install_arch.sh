@@ -56,8 +56,19 @@ arch-chroot /mnt
 ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 
+# vim /etc/pacman.conf
+# 去除multilib相关注释
+
 # 安装必要的软件包
-pacman -Sy intel-ucode os-prober grub efibootmgr sudo nvidia xorg gnome gdm dialog wpa_supplicant networkmanager net-tools sshfs git vim docker wqy-microhei fcitx fcitx-im
+pacman -Syu
+pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g nvidia nvidia-utils lib32-nvidia-utils xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git vim docker sshfs ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool mpv steam libpng12
+pacman -Syu
+mkdir -p /etc/bash_completion.d/
+curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
+systemctl enable docker
+systemctl enable NetworkManager
+systemctl enable gdm
+systemctl enable bluetooth
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
@@ -101,6 +112,30 @@ exit
 umount -R /mnt
 reboot
 
-# 连接到因特网
-# wifi-menu / dhcpcd
+# 生成密钥对
+mkdir -p .ssh
+# 略
+# 复制下面这段代码到.bashrc中，解决tilix启动报错的问题
+#if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+#    source /etc/profile.d/vte.sh
+#fi
+
+
+mkdir -p software/aur
+cd software/aur
+# 安装yay
+git clone https://aur.archlinux.org/yay.git
+cd yay
+makepkg -si
+cd ../
+# 安装topicons-plus
+git clone https://aur.archlinux.org/gnome-shell-extension-topicons-plus.git
+cd gnome-shell-extension-topicons-plus/
+makepkg -si
+cd ../
+# 安装dash-to-dock
+git clone https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git
+cd gnome-shell-extension-dash-to-dock
+makepkg -si
+cd ../
 

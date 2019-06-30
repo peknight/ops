@@ -1,6 +1,6 @@
 #!/bin/bash
 # 安装debootstrap
-sudo apt -y install debootstrap
+sudo pacman -Sy debootstrap
 # 获取deepin的keyring
 git clone https://github.com/linuxdeepin/deepin-keyring.git
 
@@ -14,7 +14,7 @@ mirror_url="https://mirrors.aliyun.com/deepin"
 sudo debootstrap --variant=minbase --arch=i386 panda rootfs ${mirror_url}/ && \
     sudo cp deepin-keyring/keyrings/deepin-archive-camel-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
     sudo cp deepin-keyring/keyrings/deepin-pools-keyring.gpg rootfs/etc/apt/trusted.gpg.d/ && \
-    sudo sed -i 's!^.*http://deb.debian.org/debian.*$!deb https://mirrors.aliyun.com/deepin panda main non-free contrib!' ./rootfs/etc/apt/sources.list && \
+    echo "deb https://mirrors.aliyun.com/deepin panda main non-free contrib" > sources.list && sudo mv sources.list ./rootfs/etc/apt/sources.list && sudo chown root:root ./rootfs/etc/apt/sources.list && \
     sudo chroot ./rootfs apt-get autoclean && \
     sudo chroot ./rootfs apt-get clean && \
     sudo chroot ./rootfs rm -rvf /usr/share/icons/Adwaita && \
