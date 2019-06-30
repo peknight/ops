@@ -84,6 +84,9 @@ echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1 localhost" >> /etc/hosts
 echo "127.0.1.1 pek-pc" >> /etc/hosts
 
+# 全局PATH变量加.
+echo "export PATH=.:$PATH" >> /etc/profile
+
 # 设置密码
 # passwd
 
@@ -107,6 +110,13 @@ useradd -c "tauriel" -g tauriel -G adm,docker,shared,server -m -s /bin/bash -u 1
 echo 'tauriel ALL=(ALL) ALL' | sudo EDITOR='tee -a' visudo
 # passwd tauriel
 
+# 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
+#vim /etc/ssh/sshd_config
+#Port 8612
+#PermitRootLogin no
+#PasswordAuthentication no
+#service sshd restart
+
 # 退出重启
 exit
 umount -R /mnt
@@ -115,11 +125,22 @@ reboot
 # 生成密钥对
 mkdir -p .ssh
 # 略
+
 # 复制下面这段代码到.bashrc中，解决tilix启动报错的问题
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #    source /etc/profile.d/vte.sh
 #fi
 
+# 设置git
+git config --global user.name "peknight"
+git config --global user.email "JKpeknight@gmail.com"
+git clone git@github.com:peknight/ops.git
+
+# authorized_keys
+cp $HOME/ops/system/authorized_keys $HOME/.ssh/
+
+# 软连接.vimrc
+ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
 mkdir -p software/aur
 cd software/aur
@@ -138,4 +159,5 @@ git clone https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git
 cd gnome-shell-extension-dash-to-dock
 makepkg -si
 cd ../
+
 
