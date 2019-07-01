@@ -69,6 +69,7 @@ pacman -Sy vim
 # 安装必要的软件包
 pacman -Syu
 pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g nvidia nvidia-utils lib32-nvidia-utils xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git docker sshfs tilix ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool telegram-desktop mpv steam libpng12
+#pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g xf86-video-intel mesa lib32-mesa xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git docker sshfs tilix ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool telegram-desktop mpv
 pacman -Syu
 mkdir -p /etc/bash_completion.d/
 curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
