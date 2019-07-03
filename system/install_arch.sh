@@ -68,8 +68,41 @@ pacman -Sy vim
 
 # 安装必要的软件包
 pacman -Syu
-pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g nvidia nvidia-utils lib32-nvidia-utils xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git docker sshfs tilix ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool telegram-desktop gnome-mpv libreoffice-still steam libpng12
-#pacman -Sy intel-ucode os-prober grub efibootmgr ntfs-3g xf86-video-intel mesa lib32-mesa xorg gnome gnome-tweaks gdm dialog wpa_supplicant networkmanager net-tools bluez lib32-alsa-plugins bash-completion git docker sshfs tilix ttf-liberation wqy-microhei wqy-zenhei chromium fcitx fcitx-im fcitx-configtool fcitx-googlepinyin wmctrl xdotool telegram-desktop gnome-mpv libreoffice-still
+# 安装启动引导相关程序
+pacman -Sy intel-ucode os-prober grub efibootmgr
+# 安装windows文件系统支持
+pacman -Sy ntfs-3g
+# 安装nvidia显卡驱动
+pacman -Sy nvidia nvidia-utils lib32-nvidia-utils
+# 或安装intel显卡驱动
+# pacman -Sy xf86-video-intel mesa lib32-mesa 
+# 安装图形界面相关程序
+pacman -Sy xorg gnome gnome-tweaks gdm wmctrl xdotool
+# 安装网络相关程序
+pacman -Sy dialog wpa_supplicant networkmanager net-tools
+# 安装蓝牙驱动
+pacman -Sy bluez
+# 安装声卡驱动
+pacman -Sy alsa lib32-alsa-plugins
+# 安装字体
+pacman -Sy ttf-liberation wqy-microhei wqy-zenhei
+# 安装常用软件
+pacman -Sy bash-completion git docker sshfs
+# 安装终端
+pacman -Sy tilix
+# 安装浏览器
+pacman -Sy chromium
+# 安装输入法
+pacman -Sy fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
+# 安装播放器
+pacman -Sy gnome-mpv
+# 安装office
+pacman -Sy libreoffice-still
+# 安装telegram
+pacman -Sy telegram-desktop
+# 安装steam与相关依赖
+pacman -Sy steam steam-native-runtime libpng12
+# 再次更新
 pacman -Syu
 mkdir -p /etc/bash_completion.d/
 curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
@@ -78,6 +111,10 @@ systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
 systemctl enable sshd
+
+# 编辑gnome-tweaks配置，修改python3依赖
+#vim /usr/bin/gnome-tweaks
+#!/usr/bin/env python3 to #!/usr/bin/python3
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
@@ -147,6 +184,9 @@ cp $HOME/ops/system/authorized_keys $HOME/.ssh/
 
 # 软连接.vimrc
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
+
+# 编辑谷歌拼音输入法
+#vim /usr/share/fcitx/data/punc.mb.zh_CN
 
 mkdir -p software/aur
 cd software/aur
