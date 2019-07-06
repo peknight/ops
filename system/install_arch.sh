@@ -38,6 +38,7 @@ mount /dev/sdb1 /mnt/home
 
 # 安装vim
 pacman -Sy vim
+
 # 选择镜像源，编辑镜像源配置文件
 # vim /etc/pacman.d/mirrorlist 
 # 将China镜像源配置移至配置文件开头
@@ -80,7 +81,6 @@ curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/complet
 
 # 配置自启动项
 systemctl enable docker
-systemctl enable NetworkManager
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
@@ -94,6 +94,7 @@ echo "pek-pc" >> /etc/hostname
 echo "127.0.0.1 localhost" >> /etc/hosts
 echo "::1 localhost" >> /etc/hosts
 echo "127.0.1.1 pek-pc" >> /etc/hosts
+
 
 # 配置引导程序
 grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
@@ -127,6 +128,12 @@ reboot
 
 # root登录
 
+# 启动网络服务
+systemctl start NetworkManager
+# 联网
+# wifi-menu
+# 如果联网失败 尝试ip l set wlp3s0 down后重连
+
 # 安装nvidia显卡驱动
 pacman -Sy nvidia nvidia-utils lib32-nvidia-utils
 # 或安装intel显卡驱动
@@ -139,6 +146,8 @@ pacman -Sy alsa lib32-alsa-plugins
 pacman -Sy bluez
 # 安装windows文件系统支持
 pacman -Sy ntfs-3g
+# 安装解压工具
+pacman -Sy unarchiver
 # 安装字体
 pacman -Sy ttf-liberation wqy-microhei wqy-zenhei
 # 安装终端
@@ -174,6 +183,7 @@ pacman -Sy steam steam-native-runtime libpng12
 #!/usr/bin/env python3 to #!/usr/bin/python3
 
 # 配置自启动项
+systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
 systemctl enable sshd
