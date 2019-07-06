@@ -145,7 +145,7 @@ pacman -Sy alsa lib32-alsa-plugins
 # 安装蓝牙驱动
 pacman -Sy bluez
 # 安装windows文件系统支持
-pacman -Sy ntfs-3g
+pacman -Sy ntfs-3g exfat-utils
 # 安装解压工具
 pacman -Sy unarchiver
 # 安装字体
