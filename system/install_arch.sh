@@ -71,7 +71,7 @@ pacman -Sy intel-ucode os-prober grub efibootmgr
 # 安装网络相关程序
 pacman -Sy dialog wpa_supplicant networkmanager net-tools
 # 安装常用软件
-pacman -Sy bash-completion git docker sshfs screenfetch
+pacman -Sy bash-completion git docker
 # 再次更新
 pacman -Syu
 
@@ -164,6 +164,8 @@ pacman -Sy libreoffice-still
 pacman -Sy telegram-desktop
 # 安装steam与相关依赖
 pacman -Sy steam steam-native-runtime libpng12
+# 安装常用软件
+pacman -Sy rsync sshfs screenfetch
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
