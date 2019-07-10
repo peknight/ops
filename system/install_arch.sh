@@ -71,7 +71,7 @@ pacman -Sy intel-ucode os-prober grub efibootmgr
 # 安装网络相关程序
 pacman -Sy dialog wpa_supplicant networkmanager net-tools
 # 安装常用软件
-pacman -Sy bash-completion git docker
+pacman -Sy bash-completion git docker wget
 # 再次更新
 pacman -Syu
 
@@ -143,7 +143,7 @@ pacman -Sy xorg gnome gnome-tweaks gdm wmctrl xdotool
 # 安装声卡驱动
 pacman -Sy alsa lib32-alsa-plugins
 # 安装蓝牙驱动
-pacman -Sy bluez
+pacman -Sy bluez bluez-utils
 # 安装windows文件系统支持
 pacman -Sy ntfs-3g exfat-utils
 # 安装解压工具
@@ -165,7 +165,7 @@ pacman -Sy telegram-desktop
 # 安装steam与相关依赖
 pacman -Sy steam steam-native-runtime libpng12
 # 安装常用软件
-pacman -Sy rsync sshfs screenfetch
+pacman -Sy sshfs screenfetch rsync xclip wireshark-qt
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
@@ -189,6 +189,9 @@ systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
 systemctl enable sshd
+
+# 将pek加入wireshark组
+gpasswd -a pek wireshark
 
 # 切换到pek
 # su - pek
@@ -216,6 +219,7 @@ ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 # 编辑谷歌拼音输入法
 #vim /usr/share/fcitx/data/punc.mb.zh_CN
 
+# 创建aur目录用于存放aur软件包
 mkdir -p software/aur
 cd software/aur
 
@@ -243,5 +247,26 @@ cd minecraft-launcher
 makepkg -si
 cd ../
 
+# 安装百度网盘客户端
+git clone https://aur.archlinux.org/baidunetdisk.git
+cd baidunetdisk
+makepkg -si
+cd ../
+
+# 安装BaiduExporter
+cd $HOME/software
+mkdir chromium
+cd chromium
+git clone https://github.com/acgotaku/BaiduExporter.git
+# 复制BaiduExporter/BaiduExporter.crx至Chromium Extensions中
+
 # 重启
 sudo shutdown -r now
+
+# FAQ
+# 1. Docker wine截图黑屏，关闭wayland使用xorg，后续尝试将wine容器改用wayland
+#     vim /etc/gdm/custom.conf
+#     uncomment WaylandEnable=false.
+#     Add the following line to the [daemon] section:
+#     DefaultSession=gnome-xorg.desktop
+
