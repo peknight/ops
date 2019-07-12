@@ -37,7 +37,7 @@ mkdir home
 mount /dev/sdb1 /mnt/home
 
 # 安装vim
-pacman -Sy vim
+pacman -Sy --noconfirm vim
 
 # 选择镜像源，编辑镜像源配置文件
 # vim /etc/pacman.d/mirrorlist 
@@ -58,22 +58,22 @@ ln -sf /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 hwclock --systohc
 
 # 安装更新
-pacman -Syu
+pacman -Syu --noconfirm
 # 安装vim
-pacman -Sy vim
+pacman -Sy --noconfirm vim
 # vim /etc/pacman.conf
 # 去除multilib相关注释
 
 # 安装更新
-pacman -Syu
+pacman -Syu --noconfirm
 # 安装启动引导相关程序
-pacman -Sy intel-ucode os-prober grub efibootmgr
+pacman -Sy --noconfirm intel-ucode os-prober grub efibootmgr
 # 安装网络相关程序
-pacman -Sy dialog wpa_supplicant networkmanager net-tools
+pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools
 # 安装常用软件
-pacman -Sy bash-completion git docker wget
+pacman -Sy --noconfirm bash-completion git docker wget
 # 再次更新
-pacman -Syu
+pacman -Syu --noconfirm
 
 # 配置bash-completion docker
 mkdir -p /etc/bash_completion.d/
@@ -135,37 +135,39 @@ systemctl start NetworkManager
 # 如果联网失败 尝试ip l set wlp3s0 down后重连
 
 # 安装nvidia显卡驱动
-pacman -Sy nvidia nvidia-utils lib32-nvidia-utils
+pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils
 # 或安装intel显卡驱动
-# pacman -Sy xf86-video-intel mesa lib32-mesa 
+# pacman -Sy --noconfirm xf86-video-intel mesa lib32-mesa 
 # 安装图形界面相关程序
-pacman -Sy xorg gnome gnome-tweaks gdm wmctrl xdotool
+pacman -Sy --noconfirm xorg gnome gnome-tweaks gdm wmctrl xdotool
 # 安装声卡驱动
-pacman -Sy alsa lib32-alsa-plugins
+pacman -Sy --noconfirm alsa lib32-alsa-plugins
 # 安装蓝牙驱动
-pacman -Sy bluez bluez-utils
+pacman -Sy --noconfirm bluez bluez-utils
 # 安装windows文件系统支持
-pacman -Sy ntfs-3g exfat-utils
+pacman -Sy --noconfirm ntfs-3g exfat-utils
 # 安装解压工具
-pacman -Sy unarchiver
+pacman -Sy --noconfirm unarchiver
 # 安装字体
-pacman -Sy ttf-liberation wqy-microhei wqy-zenhei
+pacman -Sy --noconfirm ttf-liberation wqy-microhei wqy-zenhei
 # 安装终端
-pacman -Sy tilix
+pacman -Sy --noconfirm tilix
 # 安装浏览器
-pacman -Sy chromium
+pacman -Sy --noconfirm chromium
 # 安装输入法
-pacman -Sy fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
+pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
 # 安装播放器
-pacman -Sy gnome-mpv
+pacman -Sy --noconfirm gnome-mpv
 # 安装office
-pacman -Sy libreoffice-still
+pacman -Sy --noconfirm libreoffice-still
 # 安装telegram
-pacman -Sy telegram-desktop
+pacman -Sy --noconfirm telegram-desktop
 # 安装steam与相关依赖
-pacman -Sy steam steam-native-runtime libpng12
+pacman -Sy --noconfirm steam steam-native-runtime libpng12
 # 安装常用软件
-pacman -Sy sshfs screenfetch rsync xclip wireshark-qt
+pacman -Sy --noconfirm sshfs screenfetch rsync xclip
+# 安装网络相关软件
+pacman -Sy --noconfirm traceroute wireshark-qt tcpdump
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
@@ -269,4 +271,4 @@ sudo shutdown -r now
 #     uncomment WaylandEnable=false.
 #     Add the following line to the [daemon] section:
 #     DefaultSession=gnome-xorg.desktop
-
+#2. Gnome Files 命令行启动命令 nautilus

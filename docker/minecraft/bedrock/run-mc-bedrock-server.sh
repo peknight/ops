@@ -1,5 +1,5 @@
 #!/bin/bash
-version=1.11.2.1
+version=1.12.0.28
 while getopts :v: opt
 do
     case "$opt" in
@@ -28,4 +28,4 @@ docker run -d --user $(id -u):$(id -g) --name pek-mc-bedrock-server -h pek-mc-be
            -v $target_dir/server.properties:/usr/local/minecraft/server.properties \
            -v $target_dir/permissions.json:/usr/local/minecraft/permissions.json \
            -v $target_dir/whitelist.json:/usr/local/minecraft/whitelist.json \
-           -p 19132:19132/udp pek/minecraft-bedrock-server:1.11.2.1
+           -p 19132:19132/udp pek/minecraft-bedrock-server:${version}
