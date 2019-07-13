@@ -271,4 +271,6 @@ sudo shutdown -r now
 #     uncomment WaylandEnable=false.
 #     Add the following line to the [daemon] section:
 #     DefaultSession=gnome-xorg.desktop
-#2. Gnome Files 命令行启动命令 nautilus
+# 2. Gnome Files 命令行启动命令 nautilus
+
+
