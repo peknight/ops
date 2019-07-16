@@ -15,5 +15,6 @@ docker run -d --name pek-wechat -h pek-wechat --device /dev/snd \
     -e XMODIFIERS=@im=fcitx \
     -e QT_IM_MODULE=fcitx \
     -e GTK_IM_MODULE=fcitx \
+    --ipc=host \
     pek/wechat:deepin-wine
 

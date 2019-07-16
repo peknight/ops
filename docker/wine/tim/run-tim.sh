@@ -15,5 +15,6 @@ docker run -d --name pek-tim -h pek-tim --device /dev/snd \
     -e XMODIFIERS=@im=fcitx \
     -e QT_IM_MODULE=fcitx \
     -e GTK_IM_MODULE=fcitx \
+    --ipc=host \
     pek/tim:deepin-wine
 

@@ -139,7 +139,9 @@ pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils
 # 或安装intel显卡驱动
 # pacman -Sy --noconfirm xf86-video-intel mesa lib32-mesa 
 # 安装图形界面相关程序
-pacman -Sy --noconfirm xorg gnome gnome-tweaks gdm wmctrl xdotool
+pacman -Sy --noconfirm xorg wmctrl xdotool
+pacman -Sy --noconfirm gnome gnome-tweaks gdm 
+pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
 # 安装声卡驱动
 pacman -Sy --noconfirm alsa lib32-alsa-plugins
 # 安装蓝牙驱动
@@ -182,11 +184,17 @@ pacman -Sy --noconfirm traceroute wireshark-qt tcpdump
 #export QT_IM_MODULE=fcitx
 #export XMODIFIERS=@im=fcitx
 
+# 生成sddm配置文件
+sddm --example-config > /etc/sddm.conf
+# 配置sddm
+# vim /etc/sddm.conf
+
 # 编辑gnome-tweaks配置，修改python3依赖
 #vim /usr/bin/gnome-tweaks
 #!/usr/bin/env python3 to #!/usr/bin/python3
 
 # 配置自启动项
+systemctl disable netctl
 systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
