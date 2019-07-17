@@ -5,7 +5,7 @@ if [ ! -d "$data_dir" ]; then
 fi
 
 xhost +
-docker run -d --name pek-wechat -h pek-wechat --device /dev/snd \
+docker run --rm -d --name pek-wechat -h pek-wechat --device /dev/snd \
     -v /etc/localtime:/etc/localtime:ro \
     -v /tmp/.X11-unix:/tmp/.X11-unix \
     -v ${data_dir}:/WeChatFiles \
