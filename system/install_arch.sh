@@ -140,7 +140,7 @@ pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils
 # pacman -Sy --noconfirm xf86-video-intel mesa lib32-mesa 
 # 安装图形界面相关程序
 pacman -Sy --noconfirm xorg wmctrl xdotool
-pacman -Sy --noconfirm gnome gnome-tweaks gdm 
+# 安装xfce与sddm
 pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
 # 安装声卡驱动
 pacman -Sy --noconfirm alsa lib32-alsa-plugins
@@ -158,8 +158,6 @@ pacman -Sy --noconfirm tilix
 pacman -Sy --noconfirm chromium
 # 安装输入法
 pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
-# 安装播放器
-pacman -Sy --noconfirm gnome-mpv
 # 安装office
 pacman -Sy --noconfirm libreoffice-still
 # 安装telegram
@@ -167,7 +165,7 @@ pacman -Sy --noconfirm telegram-desktop
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
 # 安装常用软件
-pacman -Sy --noconfirm sshfs screenfetch rsync xclip
+pacman -Sy --noconfirm sshfs screenfetch rsync xclip tree
 # 安装网络相关软件
 pacman -Sy --noconfirm traceroute wireshark-qt tcpdump
 
@@ -188,10 +186,6 @@ pacman -Sy --noconfirm traceroute wireshark-qt tcpdump
 sddm --example-config > /etc/sddm.conf
 # 配置sddm
 # vim /etc/sddm.conf
-
-# 编辑gnome-tweaks配置，修改python3依赖
-#vim /usr/bin/gnome-tweaks
-#!/usr/bin/env python3 to #!/usr/bin/python3
 
 # 配置自启动项
 systemctl disable netctl
@@ -226,7 +220,7 @@ cp $HOME/ops/system/authorized_keys $HOME/.ssh/
 # 软连接.vimrc
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
-# 编辑谷歌拼音输入法
+# 编辑谷歌拼音输入法【】
 #vim /usr/share/fcitx/data/punc.mb.zh_CN
 
 # 创建aur目录用于存放aur软件包
@@ -236,18 +230,6 @@ cd software/aur
 # 安装yay
 git clone https://aur.archlinux.org/yay.git
 cd yay
-makepkg -si
-cd ../
-
-# 安装topicons-plus
-git clone https://aur.archlinux.org/gnome-shell-extension-topicons-plus.git
-cd gnome-shell-extension-topicons-plus/
-makepkg -si
-cd ../
-
-# 安装dash-to-dock
-git clone https://aur.archlinux.org/gnome-shell-extension-dash-to-dock.git
-cd gnome-shell-extension-dash-to-dock
 makepkg -si
 cd ../
 
@@ -272,13 +254,3 @@ git clone https://github.com/acgotaku/BaiduExporter.git
 
 # 重启
 sudo shutdown -r now
-
-# FAQ
-# 1. Docker wine截图黑屏，关闭wayland使用xorg，后续尝试将wine容器改用wayland
-#     vim /etc/gdm/custom.conf
-#     uncomment WaylandEnable=false.
-#     Add the following line to the [daemon] section:
-#     DefaultSession=gnome-xorg.desktop
-# 2. Gnome Files 命令行启动命令 nautilus
-
-
