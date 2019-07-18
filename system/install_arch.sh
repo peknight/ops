@@ -149,7 +149,7 @@ pacman -Sy --noconfirm bluez bluez-utils
 # 安装windows文件系统支持
 pacman -Sy --noconfirm ntfs-3g exfat-utils
 # 安装解压工具
-pacman -Sy --noconfirm unarchiver
+pacman -Sy --noconfirm unarchiver p7zip
 # 安装字体
 pacman -Sy --noconfirm ttf-liberation wqy-microhei wqy-zenhei
 # 安装终端
@@ -167,7 +167,7 @@ pacman -Sy --noconfirm steam steam-native-runtime libpng12
 # 安装常用软件
 pacman -Sy --noconfirm sshfs screenfetch rsync xclip tree
 # 安装网络相关软件
-pacman -Sy --noconfirm traceroute wireshark-qt tcpdump
+pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
