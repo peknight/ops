@@ -69,9 +69,9 @@ pacman -Syu --noconfirm
 # 安装启动引导相关程序
 pacman -Sy --noconfirm intel-ucode os-prober grub efibootmgr
 # 安装网络相关程序
-pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools
+pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools wireless_tools
 # 安装常用软件
-pacman -Sy --noconfirm bash-completion git docker wget
+pacman -Sy --noconfirm bash-completion git docker wget acpi
 # 再次更新
 pacman -Syu --noconfirm
 
@@ -165,7 +165,7 @@ pacman -Sy --noconfirm telegram-desktop
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
 # 安装常用软件
-pacman -Sy --noconfirm sshfs screenfetch rsync xclip tree
+pacman -Sy --noconfirm sshfs neofetch rsync xclip tree
 # 安装网络相关软件
 pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 
@@ -254,3 +254,6 @@ git clone https://github.com/acgotaku/BaiduExporter.git
 
 # 重启
 sudo shutdown -r now
+
+# xfce资源管理器
+# thunar
