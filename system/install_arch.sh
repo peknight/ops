@@ -134,6 +134,10 @@ systemctl start NetworkManager
 # wifi-menu
 # 如果联网失败 尝试ip l set wlp3s0 down后重连
 
+# 安装常用软件
+pacman -Sy --noconfirm sshfs neofetch rsync xclip tree
+# 安装网络相关软件
+pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 # 安装nvidia显卡驱动
 pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils
 # 或安装intel显卡驱动
@@ -162,12 +166,10 @@ pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
 pacman -Sy --noconfirm libreoffice-still
 # 安装telegram
 pacman -Sy --noconfirm telegram-desktop
+# 安装vlc
+pacman -Sy --noconfirm vlc
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
-# 安装常用软件
-pacman -Sy --noconfirm sshfs neofetch rsync xclip tree
-# 安装网络相关软件
-pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
