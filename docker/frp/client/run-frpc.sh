@@ -1,5 +1,5 @@
 #!/bin/bash
-conf_dir=$HOME/software/frp/client/conf
+conf_dir=$HOME/software/frp/client/etc
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
