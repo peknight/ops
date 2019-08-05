@@ -168,6 +168,8 @@ pacman -Sy --noconfirm libreoffice-still
 pacman -Sy --noconfirm telegram-desktop
 # 安装vlc
 pacman -Sy --noconfirm vlc
+# 安装远程应用
+pacman -Sy remmina freerdp
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
 
