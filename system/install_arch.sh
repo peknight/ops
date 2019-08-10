@@ -162,14 +162,14 @@ pacman -Sy --noconfirm tilix
 pacman -Sy --noconfirm chromium
 # 安装输入法
 pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
-# 安装office
-pacman -Sy --noconfirm libreoffice-still
+# 安装文档阅读编辑软件
+pacman -Sy --noconfirm calibre libreoffice-still
 # 安装telegram
 pacman -Sy --noconfirm telegram-desktop
 # 安装vlc
 pacman -Sy --noconfirm vlc
 # 安装远程应用
-pacman -Sy remmina freerdp
+# pacman -Sy remmina freerdp
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
 
@@ -261,3 +261,5 @@ sudo shutdown -r now
 
 # xfce资源管理器
 # thunar
+# xfce application finder
+# xfce4-appfinder
