@@ -147,7 +147,7 @@ pacman -Sy --noconfirm xorg wmctrl xdotool
 # 安装xfce与sddm
 pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
 # 安装声卡驱动
-pacman -Sy --noconfirm alsa lib32-alsa-plugins
+pacman -Sy --noconfirm alsa lib32-alsa-plugins pulseaudio pavucontrol
 # 安装蓝牙驱动
 pacman -Sy --noconfirm bluez bluez-utils
 # 安装windows文件系统支持
@@ -164,14 +164,14 @@ pacman -Sy --noconfirm chromium
 pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
 # 安装文档阅读编辑软件
 pacman -Sy --noconfirm calibre libreoffice-still
-# 安装telegram
-pacman -Sy --noconfirm telegram-desktop
 # 安装vlc
 pacman -Sy --noconfirm vlc
 # 安装远程应用
 # pacman -Sy remmina freerdp
 # 安装steam与相关依赖
 pacman -Sy --noconfirm steam steam-native-runtime libpng12
+# 安装telegram
+# pacman -Sy --noconfirm telegram-desktop
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
