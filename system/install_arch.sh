@@ -135,7 +135,7 @@ systemctl start NetworkManager
 # 如果联网失败 尝试ip l set wlp3s0 down后重连
 
 # 安装常用软件
-pacman -Sy --noconfirm sshfs neofetch rsync xclip tree
+pacman -Sy --noconfirm sshfs neofetch rsync xclip tree cronie
 # 安装网络相关软件
 pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 # 安装nvidia显卡驱动
