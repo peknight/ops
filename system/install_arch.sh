@@ -1,6 +1,5 @@
 # 验证启动模式为UEFI
 ls /sys/firmware/efi/efivars
-
 # 连接到因特网
 # wifi-menu / dhcpcd
 ping -c 3 archlinux.org
@@ -197,6 +196,7 @@ systemctl enable NetworkManager
 systemctl enable gdm
 systemctl enable bluetooth
 systemctl enable sshd
+systemctl enable cronie
 
 # 将pek加入wireshark组
 gpasswd -a pek wireshark
