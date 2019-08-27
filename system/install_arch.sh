@@ -160,7 +160,7 @@ pacman -Sy --noconfirm tilix
 # 安装浏览器
 pacman -Sy --noconfirm chromium
 # 安装输入法
-pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-rime fcitx-googlepinyin
+pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-rime
 # 安装文档阅读编辑软件
 pacman -Sy --noconfirm calibre libreoffice-still
 # 安装vlc
@@ -226,6 +226,10 @@ ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
 # 编辑谷歌拼音输入法【】
 #vim /usr/share/fcitx/data/punc.mb.zh_CN
+# 配置rime
+ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/fcitx/rime/default.custom.yaml
+# Redeploy fcitx
+#fcitx-remote -r
 
 # 创建aur目录用于存放aur软件包
 mkdir -p software/aur
