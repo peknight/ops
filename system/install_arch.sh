@@ -160,7 +160,7 @@ pacman -Sy --noconfirm tilix
 # 安装浏览器
 pacman -Sy --noconfirm chromium
 # 安装输入法
-pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-googlepinyin
+pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-rime fcitx-googlepinyin
 # 安装文档阅读编辑软件
 pacman -Sy --noconfirm calibre libreoffice-still
 # 安装vlc
