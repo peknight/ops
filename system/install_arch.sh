@@ -161,6 +161,8 @@ pacman -Sy --noconfirm tilix
 pacman -Sy --noconfirm chromium
 # 安装输入法
 pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-rime
+# 安装latex
+pacman -Sy --noconfirm texlive-most texlive-lang
 # 安装文档阅读编辑软件
 pacman -Sy --noconfirm calibre libreoffice-still
 # 安装vlc
