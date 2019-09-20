@@ -1,3 +1,4 @@
+# dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 # 验证启动模式为UEFI
 ls /sys/firmware/efi/efivars
 # 连接到因特网
