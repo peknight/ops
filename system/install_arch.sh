@@ -69,7 +69,7 @@ pacman -Syu --noconfirm
 # 安装启动引导相关程序
 pacman -Sy --noconfirm intel-ucode os-prober grub efibootmgr
 # 安装网络相关程序
-pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools wireless_tools
+pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools wireless_tools network-manager-applet
 # 安装常用软件
 pacman -Sy --noconfirm bash-completion git docker wget acpi
 # 再次更新
