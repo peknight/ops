@@ -26,4 +26,4 @@ fi
 if [ ! -e "$log_dir/error.log" ]; then
   touch $log_dir/error.log
 fi
-docker run -d --name pek-v2ray-client -h pek-v2ray-client -v $conf_dir/config.json:/etc/v2ray/config.json -v $log_dir:/var/log/v2ray -p 1080:1080 -p 8118:8118 v2ray/official
+docker run -d --restart --name pek-v2ray-client -h pek-v2ray-client -v $conf_dir/config.json:/etc/v2ray/config.json -v $log_dir:/var/log/v2ray -p 1080:1080 -p 8118:8118 v2ray/official
