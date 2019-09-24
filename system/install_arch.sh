@@ -62,7 +62,7 @@ pacman -Syu --noconfirm
 # 安装vim
 pacman -Sy --noconfirm vim
 # vim /etc/pacman.conf
-# 去除multilib相关注释
+# 去除multilib相关注释 32位程序
 
 # 安装更新
 pacman -Syu --noconfirm
@@ -171,9 +171,7 @@ pacman -Sy --noconfirm vlc
 # 安装远程应用
 # pacman -Sy remmina freerdp
 # 安装steam与相关依赖
-pacman -Sy --noconfirm steam steam-native-runtime libpng12
-# 安装telegram
-# pacman -Sy --noconfirm telegram-desktop
+# pacman -Sy --noconfirm steam steam-native-runtime libpng12
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
@@ -196,10 +194,10 @@ sddm --example-config > /etc/sddm.conf
 # 配置自启动项
 systemctl disable netctl
 systemctl enable NetworkManager
-systemctl enable gdm
 systemctl enable bluetooth
 systemctl enable sshd
 systemctl enable cronie
+systemctl enable sddm
 
 # 将pek加入wireshark组
 gpasswd -a pek wireshark
@@ -227,8 +225,6 @@ cp $HOME/ops/system/authorized_keys $HOME/.ssh/
 # 软连接.vimrc
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
-# 编辑谷歌拼音输入法【】
-#vim /usr/share/fcitx/data/punc.mb.zh_CN
 # 配置rime
 ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/fcitx/rime/default.custom.yaml
 # Redeploy fcitx
@@ -256,12 +252,20 @@ cd baidunetdisk
 makepkg -si
 cd ../
 
+# 安装teamviewer
+git clone https://aur.archlinux.org/teamviewer.git
+cd teamviewer
+makepkg -si
+cd ../
+# systemctl start teamviewerd
+
 # 安装BaiduExporter
 cd $HOME/software
 mkdir chromium
 cd chromium
 git clone https://github.com/acgotaku/BaiduExporter.git
 # 复制BaiduExporter/BaiduExporter.crx至Chromium Extensions中
+cd ../../
 
 # 重启
 sudo shutdown -r now
