@@ -252,6 +252,12 @@ cd baidunetdisk
 makepkg -si
 cd ../
 
+# 安装remarkable
+git clone https://aur.archlinux.org/remarkable.git
+cd remarkable
+makepkg -si
+cd ../
+
 # 安装teamviewer
 git clone https://aur.archlinux.org/teamviewer.git
 cd teamviewer
