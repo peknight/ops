@@ -276,6 +276,18 @@ sudo shutdown -r now
 # xfce4-appfinder
 # chromium --proxy-server="socks5://127.0.0.1:1080"
 
+# 安装windows后引导被覆盖时，进入Arch Live环境
+# swapon /dev/sda2
+# mount /dev/sda4 /mnt
+# mount /dev/sda3 /mnt/boot
+# mount /dev/sda1 /mnt/efi
+# mount /dev/sdb1 /mnt/home
+# arch-chroot /mnt
+# grub-install --target=x86_64-efi --efi-directory=/efi --bootloader-id=GRUB
+# grub-mkconfig -o /boot/grub/grub.cfg
+# exit
+# reboot
+
 # 更改grub启动顺序
 # vim /etc/default/grub
 # 此项改为2 (第三个启动选项)
