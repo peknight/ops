@@ -270,10 +270,9 @@ cd ../../
 # 重启
 sudo shutdown -r now
 
-# xfce资源管理器
-# thunar
-# xfce application finder
+# thunar 资源管理器
 # xfce4-appfinder
+# xflock4 锁屏
 # chromium --proxy-server="socks5://127.0.0.1:1080"
 
 # 安装windows后引导被覆盖时，进入Arch Live环境
