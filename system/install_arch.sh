@@ -275,3 +275,10 @@ sudo shutdown -r now
 # xfce application finder
 # xfce4-appfinder
 # chromium --proxy-server="socks5://127.0.0.1:1080"
+
+# 更改grub启动顺序
+# vim /etc/default/grub
+# 此项改为2 (第三个启动选项)
+# GRUB_DEFAULT=2
+# 重新生成grub配置文件
+# grub-mkconfig -o /boot/grub/grub.cfg
