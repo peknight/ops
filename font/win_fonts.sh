@@ -8,4 +8,3 @@ cd /usr/share/fonts/windows/
 mkfontscale
 mkfontdir
 fc-cache
-
