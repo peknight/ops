@@ -25,3 +25,6 @@ mount /dev/sdb1 /mnt/usb/win10
 cp -r /mnt/iso/win10/* /mnt/usb/win10/
 # 强制持久化
 sync
+
+# git bash
+# Options... -> Text -> Locale: zh_CN, Character Set: UTF-8
