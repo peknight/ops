@@ -4,6 +4,9 @@ runtime macros/matchit.vim
 
 set encoding=utf8 " 使用UTF-8编码
 set fileencodings=utf8,gbk " 打开文件时尝试使用的解码字符集
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
 set incsearch " 预览查找
 set hidden " 切换缓冲区不用保存
 set hlsearch " 搜索时高亮显示被找到的文本
