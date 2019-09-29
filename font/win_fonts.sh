@@ -1,5 +1,5 @@
 mkdir /usr/share/fonts/windows
-cp -r $HOME/ops/font/windows/* /usr/share/fonts/windows/
+cp -r $HOME/software/microsoft/windows/font/* /usr/share/fonts/windows/
 cd /usr/share/fonts/windows/
 mkfontscale
 mkfontdir
