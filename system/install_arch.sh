@@ -161,7 +161,7 @@ pacman -Sy --noconfirm tilix
 # 安装浏览器
 pacman -Sy --noconfirm chromium
 # 安装输入法
-pacman -Sy --noconfirm fcitx fcitx-im fcitx-configtool fcitx-rime
+pacman -Sy --noconfirm ibus ibus-rime ibus-libpinyin
 # 安装latex
 pacman -Sy --noconfirm texlive-most texlive-lang
 # 安装文档阅读编辑软件
@@ -182,9 +182,10 @@ pacman -Sy --noconfirm vlc
 
 # 全局PATH变量加. /etc/profile
 #export PATH=.:$PATH
-#export GTK_IM_MODULE=fcitx
-#export QT_IM_MODULE=fcitx
-#export XMODIFIERS=@im=fcitx
+#export GTK_IM_MODULE=ibus
+#export QT_IM_MODULE=ibus
+#export XMODIFIERS=@im=ibus
+#ibus-daemon -drx
 
 # 生成sddm配置文件
 sddm --example-config > /etc/sddm.conf
@@ -226,9 +227,7 @@ cp $HOME/ops/system/authorized_keys $HOME/.ssh/
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
 # 配置rime
-ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/fcitx/rime/default.custom.yaml
-# Redeploy fcitx
-#fcitx-remote -r
+ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/ibus/rime/default.custom.yaml
 
 # 创建aur目录用于存放aur软件包
 mkdir -p software/aur

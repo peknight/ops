@@ -12,9 +12,9 @@ docker run --rm -d --name pek-tim -h pek-tim --device /dev/snd \
     -e DISPLAY=unix$DISPLAY \
     -e GDK_SCALE \
     -e GDK_DPI_SCALE \
-    -e XMODIFIERS=@im=fcitx \
-    -e QT_IM_MODULE=fcitx \
-    -e GTK_IM_MODULE=fcitx \
+    -e XMODIFIERS=@im=ibus \
+    -e QT_IM_MODULE=ibus \
+    -e GTK_IM_MODULE=ibus \
     --ipc=host \
     pek/tim:deepin-wine
 
