@@ -28,3 +28,8 @@ sync
 
 # git bash
 # Options... -> Text -> Locale: zh_CN, Character Set: UTF-8
+
+# Windows启用UTC（解决时间同步问题）
+# 启动注册表编辑器，并找到一下目录位置：
+# HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/
+# 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1
