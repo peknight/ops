@@ -161,7 +161,7 @@ pacman -Sy --noconfirm tilix
 # 安装浏览器
 pacman -Sy --noconfirm chromium
 # 安装输入法
-pacman -Sy --noconfirm ibus ibus-rime ibus-libpinyin
+pacman -Sy --noconfirm ibus ibus-rime
 # 安装latex
 pacman -Sy --noconfirm texlive-most texlive-lang
 # 安装文档阅读编辑软件
