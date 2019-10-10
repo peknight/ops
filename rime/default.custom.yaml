@@ -2,3 +2,5 @@ patch:
   schema_list:
     - schema: wubi86
     - schema: luna_pinyin
+  key_binder/bindings:
+    - { accept: "Shift+space", toggle: noop, when: always} # 取消全半角切换
