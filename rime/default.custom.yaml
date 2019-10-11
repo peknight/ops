@@ -4,3 +4,5 @@ patch:
     - schema: luna_pinyin
   key_binder/bindings:
     - { accept: "Shift+space", toggle: noop, when: always} # 取消全半角切换
+    - { when: paging, accept: bracketleft, send: Page_Up } # 翻页
+    - { when: has_menu, accept: bracketright, send: Page_Down } # 翻页
