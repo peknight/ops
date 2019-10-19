@@ -1,14 +1,16 @@
+# 制作安装盘
 # dd bs=4M if=path/to/archlinux.iso of=/dev/sdx status=progress oflag=sync
 # 验证启动模式为UEFI
 ls /sys/firmware/efi/efivars
 # 连接到因特网
-# wifi-menu / dhcpcd
+# wifi-menu / dhcpcd / ip link
 ping -c 3 archlinux.org
 
 # 更新系统时间
 timedatectl set-ntp true
 
 # 建立硬盘分区
+# fdisk -l
 # fdisk /dev/sda
 # /dev/sda1 1G /efi
 # /dev/sda2 16G Swap
@@ -43,8 +45,8 @@ pacman -Sy --noconfirm vim
 # vim /etc/pacman.d/mirrorlist 
 # 将China镜像源配置移至配置文件开头
 
-# 安装基本系统
-pacstrap /mnt base base-devel
+# 安装基本系统 + vim
+pacstrap /mnt base linux linux-firmware base-devel vim
 
 # 生成分区表文件
 genfstab -U /mnt >> /mnt/etc/fstab
@@ -59,23 +61,26 @@ hwclock --systohc
 
 # 安装更新
 pacman -Syu --noconfirm
-# 安装vim
-pacman -Sy --noconfirm vim
 # vim /etc/pacman.conf
 # 去除multilib相关注释 32位程序
 
 # 安装更新
 pacman -Syu --noconfirm
-# 安装启动引导相关程序
-pacman -Sy --noconfirm intel-ucode os-prober grub efibootmgr
-# 安装网络相关程序
+
+# Intel处理器的微码
+pacman -Sy --noconfirm intel-ucode
+# 操作UEFI固件启动管理器设置的工具
+pacman -Sy --noconfirm efibootmgr
+# 安装大一统启动加载器 os-prober用于自动发现包含Windows的分区
+pacman -Sy --noconfirm grub os-prober
+# 安装网络相关程序 (dialog被依赖) wpa_supplicant连接无线网络依赖 networkmanager检测并自动连接网络 net-tools网络配置工具 wireless_tools无线网络工具 network-manager-applet管理网络的Applet（图标）
 pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools wireless_tools network-manager-applet
-# 安装常用软件
-pacman -Sy --noconfirm bash-completion git docker wget acpi
+# 安装常用软件 bash自动补全 ...
+pacman -Sy --noconfirm bash-completion git docker wget
 # 再次更新
 pacman -Syu --noconfirm
 
-# 配置bash-completion docker
+# 配置docker的bash-completion
 mkdir -p /etc/bash_completion.d/
 curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
 
@@ -134,26 +139,30 @@ systemctl start NetworkManager
 # wifi-menu
 # 如果联网失败 尝试ip l set wlp3s0 down后重连
 
-# 安装常用软件
-pacman -Sy --noconfirm sshfs neofetch rsync xclip tree cronie
-# 安装网络相关软件
-pacman -Sy --noconfirm traceroute wireshark-qt tcpdump nmap
 # 安装nvidia显卡驱动
 pacman -Sy --noconfirm nvidia nvidia-utils lib32-nvidia-utils
 # 或安装intel显卡驱动
 # pacman -Sy --noconfirm xf86-video-intel mesa lib32-mesa 
-# 安装图形界面相关程序
+# 安装图形界面相关程序 x
 pacman -Sy --noconfirm xorg wmctrl xdotool
 # 安装xfce与sddm
 pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
-# 安装声卡驱动
+# 安装声卡驱动和相关工具
 pacman -Sy --noconfirm alsa lib32-alsa-plugins pulseaudio pavucontrol
 # 安装蓝牙驱动
 pacman -Sy --noconfirm bluez bluez-utils
+# 安装电源相关程序
+pacman -Sy --noconfirm  acpi
 # 安装windows文件系统支持
 pacman -Sy --noconfirm ntfs-3g exfat-utils
 # 安装解压工具
 pacman -Sy --noconfirm unarchiver p7zip
+# 安装定时任务
+pacman -Sy --noconfirm cronie
+# 安装网络抓包 扫描
+pacman -Sy --noconfirm tcpdump nmap traceroute wireshark-qt
+# 安装剪贴板工具
+pacman -Sy --noconfirm xclip
 # 安装字体
 pacman -Sy --noconfirm ttf-liberation wqy-microhei wqy-zenhei
 # 安装终端
@@ -162,12 +171,20 @@ pacman -Sy --noconfirm tilix
 pacman -Sy --noconfirm chromium
 # 安装输入法
 pacman -Sy --noconfirm ibus ibus-rime
+# 安装Emacs
+pacman -Sy --noconfirm emacs
 # 安装latex
 pacman -Sy --noconfirm texlive-most texlive-lang
 # 安装文档阅读编辑软件
 pacman -Sy --noconfirm calibre libreoffice-still
 # 安装vlc
 pacman -Sy --noconfirm vlc
+# 安装常用工具 sshfs远程挂载 rsync同步 tree查看目录结构 neofetch获取系统信息
+pacman -Sy --noconfirm sshfs rsync tree neofetch
+# 安装zsh
+pacman -Sy --noconfirm zsh zsh-completions
+# 安装oh-my-zsh
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
 # 安装远程应用
 # pacman -Sy remmina freerdp
 # 安装steam与相关依赖
@@ -210,7 +227,7 @@ gpasswd -a pek wireshark
 mkdir -p .ssh
 # 略
 
-# 复制下面这段代码到.bashrc中，解决tilix启动报错的问题
+# 复制下面这段代码到.bashrc/.zshrc中，解决tilix启动报错的问题
 #if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
 #    source /etc/profile.d/vte.sh
 #fi
@@ -272,6 +289,7 @@ sudo shutdown -r now
 # thunar 资源管理器
 # xfce4-appfinder
 # xflock4 锁屏
+# xfce4-session-logout --logout 注销
 # chromium --proxy-server="socks5://127.0.0.1:1080"
 
 # 安装windows后引导被覆盖时，进入Arch Live环境
