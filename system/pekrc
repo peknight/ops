@@ -1,0 +1,6 @@
+# zsh plugins
+# plugins=(git archlinux sudo z)
+if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
+    source /etc/profile.d/vte.sh
+fi
+export PATH=$HOME/bin:$HOME/bin/ssh:$PATH
