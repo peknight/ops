@@ -256,6 +256,12 @@ cd yay
 makepkg -si
 cd ../
 
+# 安装sddm theme
+git clone https://aur.archlinux.org/sddm-theme-sugar-candy-git.git
+cd sddm-theme-sugar-candy-git
+makepkg -si
+cd ../
+
 # 安装minecraft
 git clone https://aur.archlinux.org/minecraft-launcher.git
 cd minecraft-launcher
