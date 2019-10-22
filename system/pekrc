@@ -1,5 +1,5 @@
 # zsh plugins
-# plugins=(git archlinux sudo z)
+# plugins=(git archlinux docker sudo z)
 if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
     source /etc/profile.d/vte.sh
 fi
