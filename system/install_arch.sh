@@ -209,6 +209,9 @@ sddm --example-config > /etc/sddm.conf
 # 配置sddm
 # vim /etc/sddm.conf
 
+# 配置蓝牙
+cp 51-blueman.rules /etc/polkit-1/rules.d/
+
 # 配置自启动项
 systemctl disable netctl
 systemctl enable NetworkManager
@@ -217,8 +220,12 @@ systemctl enable sshd
 systemctl enable cronie
 systemctl enable sddm
 
+# 将pek加入wheel组（蓝牙需要）
+gpasswd -a pek wheel
+
 # 将pek加入wireshark组
 gpasswd -a pek wireshark
+
 
 # 切换到pek
 # su - pek
