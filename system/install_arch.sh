@@ -148,7 +148,7 @@ pacman -Sy --noconfirm xorg wmctrl xdotool
 # 安装xfce与sddm
 pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
 # 安装声卡驱动和相关工具
-pacman -Sy --noconfirm alsa lib32-alsa-plugins pulseaudio pavucontrol
+pacman -Sy --noconfirm alsa lib32-alsa-plugins pulseaudio pulseaudio-alsa pavucontrol
 # 安装蓝牙驱动
 pacman -Sy --noconfirm bluez bluez-utils blueman pulseaudio-bluetooth
 # 安装电源相关程序
