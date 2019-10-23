@@ -150,7 +150,7 @@ pacman -Sy --noconfirm xfce4 xfce4-goodies sddm
 # 安装声卡驱动和相关工具
 pacman -Sy --noconfirm alsa lib32-alsa-plugins pulseaudio pavucontrol
 # 安装蓝牙驱动
-pacman -Sy --noconfirm bluez bluez-utils
+pacman -Sy --noconfirm bluez bluez-utils blueman pulseaudio-bluetooth
 # 安装电源相关程序
 pacman -Sy --noconfirm  acpi
 # 安装windows文件系统支持
