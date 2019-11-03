@@ -46,7 +46,7 @@ pacman -Sy --noconfirm vim
 # 将China镜像源配置移至配置文件开头
 
 # 安装基本系统 + vim
-pacstrap /mnt base linux linux-firmware base-devel vim
+pacstrap /mnt base linux linux-firmware base-devel vim dhcpd
 
 # 生成分区表文件
 genfstab -U /mnt >> /mnt/etc/fstab
