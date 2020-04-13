@@ -13,3 +13,5 @@ bash rime-install wubi pinyin-simp
 ln -s $HOME/ops/rime/default.custom.yaml $HOME/Library/Rime/default.custom.yaml
 # 安装homebrew
 /bin/bash -c "$(curl -fsSL https://raw.githubusercontent.com/Homebrew/install/master/install.sh)"
+# 软连接.ssh/config
+ln -s $HOME/ops/system/ssh_config $HOME/.ssh/config

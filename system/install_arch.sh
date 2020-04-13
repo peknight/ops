@@ -253,6 +253,9 @@ ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 # 配置rime
 ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/ibus/rime/default.custom.yaml
 
+# 软连接.ssh/config
+ln -s $HOME/ops/system/ssh_config $HOME/.ssh/config
+
 # 创建aur目录用于存放aur软件包
 mkdir -p software/aur
 cd software/aur
