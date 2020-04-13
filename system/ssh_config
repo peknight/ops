@@ -1,0 +1,41 @@
+HOST peknasint
+  Hostname pek-nas
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknasv6
+  Hostname nas.peknight.com
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknas
+  Hostname nas.peknight.com
+  Port 31011
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekdev
+  Hostname dev.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknyc
+  Hostname nyc00.server.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peksgp
+  Hostname sgp00.server.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peksfo
+  Hostname sfo00.server.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
