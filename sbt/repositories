@@ -1,8 +1,5 @@
 [repositories]
 local
-maven-local: file:///home/server/software/maven/repository/
-aliyun-maven: https://maven.aliyun.com/nexus/content/repositories/central/
-aliyun-ivy: https://maven.aliyun.com/nexus/content/repositories/central/ , [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext]
 typesafe: https://repo.typesafe.com/typesafe/ivy-releases/, [organization]/[module]/(scala_[scalaVersion]/)(sbt_[sbtVersion]/)[revision]/[type]s/[artifact](-[classifier]).[ext], bootOnly
 sonatype-oss-releases
 maven-central
