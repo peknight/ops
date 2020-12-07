@@ -5,13 +5,25 @@ HOST peknasint
   IdentityFile ~/.ssh/id_rsa
 
 HOST peknasv6
-  Hostname nas.peknight.com
+  Hostname nas.v6.peknight.com
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknasv4
+  Hostname nas.v4.peknight.com
   Port 22
   User admin
   IdentityFile ~/.ssh/id_rsa
 
 HOST peknas
   Hostname nas.peknight.com
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknasfrp
+  Hostname pub.peknight.com
   Port 31011
   User admin
   IdentityFile ~/.ssh/id_rsa
