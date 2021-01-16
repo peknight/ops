@@ -34,7 +34,7 @@ sync
 # HKEY_LOCAL_MACHINE/SYSTEM/CurrentControlSet/Control/TimeZoneInformation/
 # 添加一项类型为REG_DWORD的键值，命名为RealTimeIsUniversal，值为1
 
-# fdisk /dev/sdc
+fdisk /dev/sdc
 # d 删除现有分区
 # g 创建新的GPT分区表
 # n 创建新分区 +8G(NTFS)
@@ -42,8 +42,3 @@ sync
 # n 创建新分区 +1G(EFI)
 # t 设置分区类型1
 # w 保存退出
-# mkfs.ntfs /dev/sdc1
-# mkfs.fat -F32 /dev/sdc2
-# dd bs=4M if=cn_windows_10_business_editions_version_20h2_updated_dec_2020_x64_dvd_547eb680.iso of=/dev/sdc1 status=progress oflag=sync
-# wget https://raw.githubusercontent.com/pbatard/rufus/master/res/uefi/uefi-ntfs.img
-# dd bs=4M if=/root/uefi-ntfs.img of=/dev/sdc2 status=progress oflag=sync
