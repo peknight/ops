@@ -245,7 +245,7 @@ git config --global user.email "JKpeknight@gmail.com"
 git clone git@github.com:peknight/ops.git
 
 # authorized_keys
-cp $HOME/ops/system/authorized_keys $HOME/.ssh/
+ln -s $HOME/ops/system/authorized_keys $HOME/.ssh/authorized_keys
 
 # 软连接.vimrc
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
