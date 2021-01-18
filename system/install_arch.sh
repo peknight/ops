@@ -250,7 +250,17 @@ cp $HOME/ops/system/authorized_keys $HOME/.ssh/
 # 软连接.vimrc
 ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
 
+# 配置配置oh-my-zsh theme
+ln -s $HOME/ops/zsh/themes/pek-robbyrussell.zsh-theme $HOME/.oh-my-zsh/custom/themes/pek-robbyrussell.zsh-theme
+
 # 配置rime
+mkdir -p software/
+cd software
+git clone --depth 1 https://github.com/rime/plum.git
+cd plum
+bash rime-install :preset
+bash rime-install wubi pinyin-simp
+cd ../..
 ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/ibus/rime/default.custom.yaml
 
 # 软连接.ssh/config
