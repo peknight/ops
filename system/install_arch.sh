@@ -164,7 +164,8 @@ pacman -Sy --noconfirm tcpdump nmap traceroute wireshark-qt
 # 安装剪贴板工具
 pacman -Sy --noconfirm xclip
 # 安装字体
-pacman -Sy --noconfirm ttf-liberation wqy-microhei wqy-zenhei
+pacman -Sy --noconfirm ttf-dejavu ttf-liberation wqy-microhei wqy-zenhei
+pacman -Sy --noconfirm noto-fonts-cjk noto-fonts-emoji adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts 
 # 安装终端
 pacman -Sy --noconfirm tilix
 # 安装浏览器
@@ -189,6 +190,8 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/mas
 # pacman -Sy remmina freerdp
 # 安装steam与相关依赖
 # pacman -Sy --noconfirm steam steam-native-runtime libpng12
+# 安装telegram
+# pacman -Sy --noconfirm telegram-desktop
 
 # 配置sshd
 # 修改sshd_config文件 修改ssh端口号 注意开通8612端口号的防火墙
