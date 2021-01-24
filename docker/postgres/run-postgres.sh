@@ -1,6 +1,6 @@
 #!/bin/bash
 data_dir=$HOME/software/postgres/pek/data
-conf_dir=$HOME/software/postgres/pek/etc
+conf_dir=$HOME/software/postgres/pek/conf
 if [ ! -d "$data_dir" ]; then
   mkdir -p $data_dir
 fi
