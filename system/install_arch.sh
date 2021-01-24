@@ -76,7 +76,7 @@ pacman -Sy --noconfirm grub os-prober
 # 安装网络相关程序 (dialog被依赖) wpa_supplicant连接无线网络依赖 networkmanager检测并自动连接网络 net-tools网络配置工具 wireless_tools无线网络工具 network-manager-applet管理网络的Applet（图标）
 pacman -Sy --noconfirm dialog wpa_supplicant networkmanager net-tools wireless_tools network-manager-applet
 # 安装常用软件 bash自动补全 ...
-pacman -Sy --noconfirm bash-completion git docker wget pacman-contrib
+pacman -Sy --noconfirm bash-completion git docker docker-compose wget pacman-contrib
 # 再次更新
 pacman -Syu --noconfirm
 
