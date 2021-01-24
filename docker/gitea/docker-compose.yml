@@ -1,4 +1,4 @@
-version: "2"
+version: "3"
 
 services:
   pek-gitea:
@@ -25,6 +25,7 @@ services:
 
   pek-gitea-db:
     image: postgres:latest
+    hostname: pek-gitea-db
     container_name: pek-gitea-db
     restart: always
     environment:
@@ -35,4 +36,8 @@ services:
     volumes:
       - ./postgres/data:/var/lib/postgresql/data
       - ./postgres/conf/postgres.conf:/etc/postgresql/postgresql.conf
-    entrypoint: postgres -c 'config_file=/etc/postgresql/postgresql.conf'
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql/postgresql.conf"
+

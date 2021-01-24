@@ -9,9 +9,12 @@ if [ ! -d "$gitea_dir" ]; then
 fi
 if [ ! -d "$gitea_data_dir" ]; then
   mkdir -p $gitea_data_dir
+  sudo chown -R 1000:1000 $gitea_data_dir
 fi
 if [ ! -d "$gitea_conf_dir" ]; then
   mkdir -p $gitea_conf_dir
+  sudo chown -R 1000:1000 $gitea_conf_dir
+fi
 fi
 if [ ! -d "$postgres_data_dir" ]; then
   mkdir -p $postgres_data_dir
