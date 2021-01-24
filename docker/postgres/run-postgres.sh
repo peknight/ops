@@ -7,8 +7,12 @@ fi
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
-cp postgres.conf $conf_dir/
-cp postgres-passwd $conf_dir/
+if [ ! -e "$conf_dir/postgres.conf" ]; then
+    cp postgres.conf $conf_dir/
+fi
+if [ ! -e "$conf_dir/postgres-passwd" ]; then
+    cp postgres-passwd $conf_dir/
+fi
 docker run -d --name pek-postgres -h pek-postgres \
            -e POSTGRES_USER=pek \
            -e POSTGRES_PASSWORD_FILE=/run/secrets/postgres-passwd \
