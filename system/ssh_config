@@ -46,3 +46,26 @@ HOST peksgp
   User pek
   IdentityFile ~/.ssh/id_rsa
 
+HOST pekpc
+  Hostname home.peknight.com
+  Port 8612
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekpcint
+  Hostname pek-pc
+  Port 8612
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekpcv4
+  Hostname home.v4.peknight.com
+  Port 8612
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekpcv6
+  Hostname home.v6.peknight.com
+  Port 8612
+  User admin
+  IdentityFile ~/.ssh/id_rsa
