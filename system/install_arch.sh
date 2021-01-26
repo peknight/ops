@@ -85,6 +85,7 @@ mkdir -p /etc/bash_completion.d/
 curl -L https://raw.githubusercontent.com/docker/machine/v0.16.0/contrib/completion/bash/docker-machine.bash -o /etc/bash_completion.d/docker-machine
 cp daemon.json /etc/docker/
 ip6tables -t nat -A POSTROUTING -s fd00::/80 ! -o docker0 -j MASQUERADE
+ip6tables-save -f /etc/iptables/ip6tables.rules
 
 # 配置自启动项
 systemctl enable docker
