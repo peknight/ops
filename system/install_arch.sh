@@ -89,6 +89,8 @@ ip6tables-save -f /etc/iptables/ip6tables.rules
 
 # 配置自启动项
 systemctl enable docker
+systemctl enable iptables
+systemctl enable ip6tables
 
 # 本地化
 # 去除en_US.UTF-8 zh_CN.UTF-8前的注释
