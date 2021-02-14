@@ -456,6 +456,7 @@ fi
 ```shell
 git config --global user.name "peknight"
 git config --global user.email "JKpeknight@gmail.com"
+git config --global pull.rebase false
 ```
 
 #### Github pek/ops
