@@ -194,7 +194,7 @@ grub-mkconfig -o /boot/grub/grub.cfg
 * 安装网络相关程序，参考[Network configuration](https://wiki.archlinux.org/index.php/Network_configuration)，其中network-manager-applet为管理网络的Applet（图标）
 
 ```shell
-pacman -Sy networkmanager network-manager-applet
+pacman -Sy dhcpcd networkmanager network-manager-applet
 ```
 
 * 安装蓝牙驱动[Bluetooth](https://wiki.archlinux.org/index.php/Bluetooth)
