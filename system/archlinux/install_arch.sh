@@ -323,6 +323,12 @@ pacman -Sy calibre libreoffice-still
 pacman -Sy vlc
 ```
 
+* 安装obs-studio
+
+```shell
+pacman -Sy obs-studio
+```
+
 * 安装telegram
 ```shell
 pacman -Sy telegram-desktop
