@@ -32,3 +32,18 @@ vim /etc/default/grub
 ```shell
 grub-mkconfig -o /boot/grub/grub.cfg
 ```
+
+### 去除quiet参数
+
+```shell
+vim /etc/default/grub
+```
+
+找到`GRUB_CMDLINE_LINUX_DEFAULT="loglevel=3 quiet"`一行，去除quiet
+
+* 重新生成GRUB配置文件
+
+```shell
+grub-mkconfig -o /boot/grub/grub.cfg
+```
+
