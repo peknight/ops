@@ -330,8 +330,15 @@ pacman -Sy obs-studio
 ```
 
 * 安装telegram
+
 ```shell
 pacman -Sy telegram-desktop
+```
+
+* 安装plank
+
+```shell
+pacman -Sy plank
 ```
 
 * 可选远程工具
