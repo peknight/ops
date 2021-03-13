@@ -515,7 +515,7 @@ makepkg -si
 cd ../
 ```
 
-# 安装sddm theme
+* 安装sddm theme
 
 ```shell
 git clone https://aur.archlinux.org/sddm-theme-sugar-candy-git.git
