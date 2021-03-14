@@ -335,10 +335,18 @@ pacman -Sy obs-studio
 pacman -Sy telegram-desktop
 ```
 
-* 安装plank
+* 安装plank，（阴影可通过`Window Manager Tweaks` - `Compositor` - `Show shadows under dock windows`去除）
 
 ```shell
 pacman -Sy plank
+```
+
+* 安装GoldenDict
+
+* [GoldenDict](https://wiki.archlinux.org/index.php/GoldenDict)
+
+```shell
+pacman -Sy goldendict
 ```
 
 * 可选远程工具
@@ -513,6 +521,15 @@ makepkg -si
 cd ../
 ```
 
+* 安装ulauncher
+
+```shell
+git clone https://aur.archlinux.org/ulauncher.git
+cd ulauncher
+makepkg -si
+cd ../
+```
+
 * 安装minecraft
 
 ```shell
@@ -531,3 +548,11 @@ makepkg -si
 cd ../
 ```
 
+* 安装mugshot
+
+```shell
+git clone https://aur.archlinux.org/mugshot.git
+cd mugshot
+makepkg -si
+cd ../
+```
