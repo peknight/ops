@@ -6,7 +6,6 @@
 
 ```
 # GitHub Start
-52.74.223.119 github.com
 140.82.113.3 github.com
 52.74.223.119 gist.github.com
 140.82.114.20 gist.github.com
