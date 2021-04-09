@@ -1,0 +1,23 @@
+# VirtualBox
+
+* [VirtualBox](https://wiki.archlinux.org/index.php/VirtualBox)
+
+## 安装VirtualBox
+
+```shell
+pacman -Sy virtualbox virtualbox-guest-iso
+```
+
+```text
+for the linux kernel, choose virtualbox-host-modules-arch
+for any other kernel (including linux-lts), choose virtualbox-host-dkms
+```
+
+## 从客体系统访问主机 USB 设备
+
+将需要运行 VirtualBox 的用户名添加到 `vboxusers` 用户组，USB 设备才能被访问。
+
+```shell
+gpasswd -a pek vboxusers
+```
+

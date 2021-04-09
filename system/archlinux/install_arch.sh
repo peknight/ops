@@ -251,6 +251,13 @@ pacman -Sy acpi
 pacman -Sy btrfs-progs exfat-utils ntfs-3g
 ```
 
+### 配置启动项
+
+```shell
+systemctl enable NetworkManager
+systemctl enable bluetooth
+```
+
 ### 退出重启
 
 ```shell
@@ -431,8 +438,6 @@ polkit.addRule(function(action, subject) {
 #### 配置启动项
 
 ```shell
-systemctl enable NetworkManager
-systemctl enable bluetooth
 systemctl enable sshd
 systemctl enable sddm
 systemctl enable cronie
