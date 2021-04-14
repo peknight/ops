@@ -37,7 +37,7 @@ server_names = ['cloudflare', 'cloudflare-ipv6']
 ## Example with both IPv4 and IPv6:
 ## listen_addresses = ['127.0.0.1:53', '[::1]:53']
 
-listen_addresses = ['127.0.0.1:53']
+listen_addresses = ['0.0.0.0:53']
 
 
 ## Maximum number of simultaneous client connections to accept
@@ -59,7 +59,7 @@ max_clients = 250
 ipv4_servers = true
 
 # Use servers reachable over IPv6 -- Do not enable if you don't have IPv6 connectivity
-ipv6_servers = false
+ipv6_servers = true
 
 # Use servers implementing the DNSCrypt protocol
 dnscrypt_servers = true
