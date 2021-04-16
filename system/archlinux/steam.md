@@ -9,7 +9,13 @@ vim /etc/pacman.conf
 ## 安装32位nvidia显卡驱动
 
 ```shell
-pacman -Sy lib32-nvidia-utils
+pacman -Sy lib32-nvidia-utils 
+```
+
+## 或安装32位nvidia开源显卡驱动
+
+```shell
+pacman -Sy xf86-video-nouveau 
 ```
 
 ## 或安装32位intel显卡驱动
