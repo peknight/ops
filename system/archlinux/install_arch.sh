@@ -89,6 +89,7 @@ mount /dev/sdb1 /mnt/home
 ### 选择镜像源，编辑镜像源配置文件
 
 * 将China镜像源配置移至配置文件开头
+* 如无China镜像源则`curl https://archlinux.org/mirrorlist/?country=CN&ip_version=4&protocol=https`
 
 ```shell
 vim /etc/pacman.d/mirrorlist 
