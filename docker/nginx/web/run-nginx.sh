@@ -16,13 +16,4 @@ if [ ! -e "$cert_dir/nginx.key" ]; then
   exit 1
 fi
 html_dir=$HOME/software/nginx/web/html
-if [ ! -d "$html_dir" ]; then
-  mkdir -p $html_dir
-fi
-docker run -d --name pek-web -h pek-web \
-           -v $conf_dir/nginx.conf:/etc/nginx/nginx.conf:ro \
-           -v $cert_dir/nginx.crt:/etc/nginx/nginx.crt \
-           -v $cert_dir/nginx.key:/etc/nginx/nginx.key \
-           -v $html_dir:/usr/share/nginx/web \
-           -p 80:80 -p 443:443 \
-           nginx:stable-alpine
+docker run -d --name pek-web -h pek-web -v $html_dir:/usr/share/nginx/web -v $conf_dir/nginx.conf:/etc/nginx/nginx.conf:ro -v $cert_dir/nginx.crt:/etc/nginx/nginx.crt -v $cert_dir/nginx.key:/etc/nginx/nginx.key -p 4431:4431 nginx:stable-alpine
