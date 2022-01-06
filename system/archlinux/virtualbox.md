@@ -30,3 +30,14 @@ cd ..
 gpasswd -a pek vboxusers
 ```
 
+## 客体archlinux安装virtualbox-guest-utils
+
+```shell
+pacman -Sy virtualbox-guest-utils
+```
+
+自启动服务
+
+```shell
+systemctl enable vboxservice.service
+```
