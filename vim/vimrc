@@ -1,6 +1,7 @@
 set nocompatible " 关闭vi兼容模式
 filetype plugin on
 runtime macros/matchit.vim
+syntax on
 
 set encoding=utf8 " 使用UTF-8编码
 set fileencodings=utf8,gbk " 打开文件时尝试使用的解码字符集
