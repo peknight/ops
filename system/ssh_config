@@ -23,7 +23,7 @@ HOST peknasv6
   IdentityFile ~/.ssh/id_rsa
 
 HOST peknasfrp
-  Hostname nyc00.server.peknight.com
+  Hostname pub.peknight.com
   Port 31011
   User admin
   IdentityFile ~/.ssh/id_rsa
