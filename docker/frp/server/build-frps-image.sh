@@ -1,5 +1,5 @@
 #!/bin/bash
-frp_version=0.27.0
+frp_version=0.39.1
 while getopts :v: opt
 do
     case "$opt" in
@@ -16,5 +16,5 @@ wget https://github.com/fatedier/frp/releases/download/v${frp_version}/frp_${frp
   && mv frp_linux_amd64.tar.gz ../ \
   && cd ../ \
   && rm -rf ${tar_file_name}* \
-  && docker build -t pek/frps:0.27.0 . \
+  && docker build -t pek/frps:${frp_version} . \
   && rm -f frp_linux_amd64.tar.gz

@@ -28,6 +28,12 @@ HOST peknasfrp
   User admin
   IdentityFile ~/.ssh/id_rsa
 
+HOST pekctrl
+  Hostname ctrl.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
 HOST pekdev
   Hostname dev.peknight.com
   Port 8612

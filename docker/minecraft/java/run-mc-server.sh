@@ -1,5 +1,5 @@
 #!/bin/bash
-version=1.17.1
+version=1.18.1
 while getopts :v: opt
 do
     case "$opt" in
@@ -13,6 +13,12 @@ if [ ! -d "$target_dir/logs" ]; then
 fi
 if [ ! -d "$target_dir/world" ]; then
   mkdir -p $target_dir/world
+fi
+if [ ! -d "$target_dir/versions/$version" ]; then
+    mkdir -p $target_dir/versions/$version
+fi
+if [ ! -d "$target_dir/libraries" ]; then
+    mkdir -p $target_dir/libraries
 fi
 
 if [ ! -e "$target_dir/eula.txt" ]; then
@@ -40,6 +46,8 @@ fi
 docker run -d --user $(id -u):$(id -g) --name pek-mc-server -h pek-mc-server \
            -v $target_dir/logs:/usr/local/minecraft/data/logs \
            -v $target_dir/world:/usr/local/minecraft/data/world \
+           -v $target_dir/versions/$version:/usr/local/minecraft/data/versions/$versions \
+           -v $target_dir/libraries:/usr/local/minecraft/data/libraries \
            -v $target_dir/eula.txt:/usr/local/minecraft/data/eula.txt \
            -v $target_dir/server.properties:/usr/local/minecraft/data/server.properties \
            -v $target_dir/ops.json:/usr/local/minecraft/data/ops.json \
