@@ -24,7 +24,7 @@ fi
 if [ ! -e "$gitea_dir/docker-compose.yml" ]; then
     cp docker-compose.yml $gitea_dir/
 fi
-if [ ! -e "$gitea_conf_dir/postgres.conf" ]; then
+if [ ! -e "$postgres_conf_dir/postgres.conf" ]; then
     cp ../postgres/postgres.conf $postgres_conf_dir/
 fi
 cd $gitea_dir
