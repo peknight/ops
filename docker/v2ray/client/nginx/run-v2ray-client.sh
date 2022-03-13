@@ -6,7 +6,7 @@ do
         *) echo "Unknown option: $opt";;
     esac
 done
-conf_dir=$HOME/software/v2ray/client/etc
+conf_dir=$HOME/software/v2ray/client/conf
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
