@@ -1,5 +1,5 @@
 #!/bin/bash
-conf_dir=$HOME/software/v2ray/server/etc
+conf_dir=$HOME/software/v2ray/server/conf
 if [ ! -d "$conf_dir" ]; then
   mkdir -p $conf_dir
 fi
