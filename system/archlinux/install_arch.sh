@@ -205,12 +205,6 @@ pacman -Sy dhcpcd networkmanager network-manager-applet
 pacman -Sy bluez bluez-utils blueman
 ```
 
-* 安装声卡驱动和相关工具
-
-```shell
-pacman -Sy alsa
-```
-
 * 安装蓝牙耳机相关[Bluetooth headset](https://wiki.archlinux.org/index.php/bluetooth_headset)，参考[PulseAudio](https://wiki.archlinux.org/index.php/PulseAudio)
 
 ```shell

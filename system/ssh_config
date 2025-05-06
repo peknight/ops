@@ -67,3 +67,9 @@ HOST pekpcv6
 HOST git.peknight.com
   HostKeyAlgorithms=+ssh-rsa
   PubkeyAcceptedAlgorithms +ssh-rsa
+
+HOST peklowriskint
+  Hostname pek-lowrisk
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
