@@ -23,7 +23,7 @@ HOST peknasv6
   IdentityFile ~/.ssh/id_rsa
 
 HOST peknasfrp
-  Hostname pub.peknight.com
+  Hostname ctrl.peknight.com
   Port 31011
   User admin
   IdentityFile ~/.ssh/id_rsa
@@ -71,5 +71,11 @@ HOST git.peknight.com
 HOST peklowriskint
   Hostname pek-lowrisk
   Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peklowriskfrp
+  Hostname ctrl.peknight.com
+  Port 31061
   User pek
   IdentityFile ~/.ssh/id_rsa
