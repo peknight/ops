@@ -1,33 +1,3 @@
-HOST peknas
-  Hostname nas.peknight.com
-  Port 22
-  User admin
-  IdentityFile ~/.ssh/id_rsa
-
-HOST peknasint
-  Hostname pek-nas
-  Port 22
-  User admin
-  IdentityFile ~/.ssh/id_rsa
-
-HOST peknasv4
-  Hostname nas.v4.peknight.com
-  Port 22
-  User admin
-  IdentityFile ~/.ssh/id_rsa
-
-HOST peknasv6
-  Hostname nas.v6.peknight.com
-  Port 22
-  User admin
-  IdentityFile ~/.ssh/id_rsa
-
-HOST peknasfrp
-  Hostname ctrl.peknight.com
-  Port 31011
-  User admin
-  IdentityFile ~/.ssh/id_rsa
-
 HOST pekctrl
   Hostname ctrl.peknight.com
   Port 8612
@@ -38,6 +8,18 @@ HOST peknyc
   Hostname nyc00.server.peknight.com
   Port 8612
   User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknas
+  Hostname nas.peknight.com
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknasint
+  Hostname pek-nas
+  Port 22
+  User admin
   IdentityFile ~/.ssh/id_rsa
 
 HOST pekpc
@@ -52,16 +34,10 @@ HOST pekpcint
   User pek
   IdentityFile ~/.ssh/id_rsa
 
-HOST pekpcv4
-  Hostname home.v4.peknight.com
-  Port 8612
-  User pek
-  IdentityFile ~/.ssh/id_rsa
-
-HOST pekpcv6
-  Hostname home.v6.peknight.com
-  Port 8612
-  User pek
+Host github.com
+  Hostname github.com
+  Port 22
+  User git
   IdentityFile ~/.ssh/id_rsa
 
 HOST git.peknight.com
