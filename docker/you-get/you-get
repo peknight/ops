@@ -1,0 +1,15 @@
+#!/bin/bash
+# https://github.com/soimort/you-get
+target_dir=$HOME/software/you-get/data/downloads
+cmd=$@
+if [ -z "$cmd" ]; then
+  echo "empty cmd"
+  exit 1
+fi
+if [ ! -d "$target_dir" ]; then
+  mkdir -p $target_dir
+fi
+echo target dir: $target_dir
+echo cmd: $cmd
+
+docker run --rm --name pek-you-get -h pek-you-get --user 1000 -v $target_dir:/data pek/you-get $cmd

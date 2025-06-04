@@ -1,0 +1,12 @@
+ext {
+    nexus = 'http://dev.peknight.com:8081'
+    username = 'admin'
+    password = '***'
+}
+allProjects {
+    repositories {
+        maven {
+            url "${nexus}/repository/pek-public"
+        }
+    }
+}
