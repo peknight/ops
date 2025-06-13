@@ -299,7 +299,7 @@ pacman -Sy noto-fonts-cjk noto-fonts-emoji adobe-source-han-sans-otc-fonts adobe
 * 安装终端
 
 ```shell
-pacman -Sy tilix
+pacman -Sy terminator
 ```
 
 * 安装浏览器，原来使用chromium，迁移到firefox试试
@@ -457,16 +457,6 @@ su - pek
 
 ```shell
 sh -c "$(curl -fsSL https://raw.githubusercontent.com/robbyrussell/oh-my-zsh/master/tools/install.sh)"
-```
-
-#### 配置tilix
-
-* 复制下面这段代码到.zshrc中，解决tilix启动报错的问题
-
-```shell
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
 ```
 
 #### 创建密钥对
