@@ -46,6 +46,7 @@ fi
 docker run -d --user $(id -u):$(id -g) --name pek-mc-server -h pek-mc-server \
            -v $target_dir/logs:/usr/local/minecraft/data/logs \
            -v $target_dir/world:/usr/local/minecraft/data/world \
+           -v $target_dir/plugins:/usr/local/minecraft/data/plugins \
            -v $target_dir/versions/$version:/usr/local/minecraft/data/versions/$versions \
            -v $target_dir/libraries:/usr/local/minecraft/data/libraries \
            -v $target_dir/eula.txt:/usr/local/minecraft/data/eula.txt \
