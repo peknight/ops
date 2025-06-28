@@ -1,12 +1,12 @@
-FROM ubuntu:18.04
+FROM ubuntu:25.10
 MAINTAINER peknight <JKpeknight@gmail.com>
 
-ENV VERSION v1.14.1.4
+ENV VERSION v1.21.92.1
 ENV LD_LIBRARY_PATH /usr/local/minecraft
 
 WORKDIR /usr/local/minecraft
 ADD bedrock-server.tar /usr/local/minecraft
-RUN apt -y update && apt -y install libcurl4 && apt -y autoremove && apt clean
+RUN apt -y update && apt -y install libcurl4 && apt -y autoremove && apt clean && chmod +x ./bedrock_server
 
 EXPOSE 19132/udp
 EXPOSE 19133/udp
