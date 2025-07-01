@@ -24,6 +24,9 @@ set tabstop=4 " 设定 tab 长度为4
 set cindent " 使用C语言风格自动缩进
 set smartindent " 智能缩进
 
+" 折叠
+" set foldmethod=indent
+
 " 打开VIMRC文件
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " 加载VIMRC文件
