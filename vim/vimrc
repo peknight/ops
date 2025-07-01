@@ -60,3 +60,10 @@ endfunction
 if version < 800
   colorscheme elflord
 endif
+
+" JSON格式化
+command! JsonFormat %!python -m json.tool
+
+" Unicode解码
+command! DecodeUnicode %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
+
