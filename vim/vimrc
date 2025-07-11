@@ -24,9 +24,6 @@ set tabstop=4 " 设定 tab 长度为4
 set cindent " 使用C语言风格自动缩进
 set smartindent " 智能缩进
 
-" 折叠
-" set foldmethod=indent
-
 " 打开VIMRC文件
 nnoremap <leader>ev :vsplit $MYVIMRC<cr>
 " 加载VIMRC文件
@@ -61,9 +58,19 @@ if version < 800
   colorscheme elflord
 endif
 
-" JSON格式化
-command! JsonFormat %!python -m json.tool
-
 " Unicode解码
 command! DecodeUnicode %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
+
+" JSON 格式化并解码Unicode
+function! s:JsonFormatAndUnicodeDecode()
+  " JSON格式化
+  %!python -m json.tool
+  " Unicode解码
+  %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
+  " 折叠
+  set foldmethod=indent
+endfunction
+
+" JSON格式化
+command! JsonFormat call <SID>JsonFormatAndUnicodeDecode()
 
