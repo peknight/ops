@@ -69,6 +69,10 @@ function! s:JsonFormatAndUnicodeDecode()
   %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
   " 折叠
   set foldmethod=indent
+  " 展开折叠
+  normal! zR
+  " 到首行
+  normal! gg
 endfunction
 
 " JSON格式化
