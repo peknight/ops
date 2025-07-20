@@ -1,5 +1,5 @@
 #!/bin/bash
-version=1.21.6
+version=1.21.8
 while getopts :v: opt
 do
     case "$opt" in
