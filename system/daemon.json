@@ -2,10 +2,10 @@
   "ipv6": true,
   "fixed-cidr-v6": "fd00::/80",
   "registry-mirrors": [
+    "https://docker.peknight.com",
     "https://docker.m.daocloud.io",
-    "https://docker.imgdb.de",
-    "https://docker-0.unsee.tech",
-    "https://docker.hlmirror.com",
-    "https://docker.1ms.run"
+    "https://docker.1ms.run",
+    "https://docker.xuanyuan.me",
+    "https://docker.hlmirror.com"
   ]
 }
