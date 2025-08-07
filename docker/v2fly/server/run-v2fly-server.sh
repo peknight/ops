@@ -27,4 +27,10 @@ fi
 if [ ! -e "$log_dir/error.log" ]; then
   touch $log_dir/error.log
 fi
-docker run -d --name pek-v2fly-server -h pek-v2fly-server -v $conf_dir/config.json:/etc/v2fly/config.json -v $log_dir:/var/log/v2fly --net host --cap-add NET_ADMIN v2fly/v2fly-core:v5.30.0 run -c /etc/v2fly/config.json
+docker run -d --restart always --name pek-v2fly-server -h pek-v2fly-server \
+           -e V2RAY_VMESS_AEAD_FORCED=false \
+           -v $conf_dir/config.json:/etc/v2fly/config.json \
+           -v $log_dir:/var/log/v2fly \
+           --net host --cap-add NET_ADMIN \
+           v2fly/v2fly-core:v5.30.0 \
+           run -c /etc/v2fly/config.json
