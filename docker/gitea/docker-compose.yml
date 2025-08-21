@@ -1,0 +1,43 @@
+version: "3"
+
+services:
+  pek-gitea:
+    image: gitea/gitea:latest-rootless
+    container_name: pek-gitea
+    environment:
+      - DB_TYPE=postgres
+      - DB_HOST=pek-gitea-db:5432
+      - DB_NAME=gitea
+      - DB_USER=gitea
+      - DB_PASSWD=***
+      - APP_NAME="Pek Gitea"
+    restart: always
+    volumes:
+      - ./gitea/data:/var/lib/gitea
+      - ./gitea/conf:/etc/gitea
+      - /etc/timezone:/etc/timezone:ro
+      - /etc/localtime:/etc/localtime:ro
+    ports:
+      - "3000:3000"
+      - "2222:2222"
+    depends_on:
+      - pek-gitea-db
+
+  pek-gitea-db:
+    image: postgres:latest
+    hostname: pek-gitea-db
+    container_name: pek-gitea-db
+    restart: always
+    environment:
+      - POSTGRES_USER=gitea
+      - POSTGRES_PASSWORD=***
+      - POSTGRES_DB=gitea
+      - PGDATA=/var/lib/postgresql/data/pgdata
+    volumes:
+      - ./postgres/data:/var/lib/postgresql/data
+      - ./postgres/conf/postgres.conf:/etc/postgresql/postgresql.conf
+    command:
+      - "postgres"
+      - "-c"
+      - "config_file=/etc/postgresql/postgresql.conf"
+

@@ -1,0 +1,24 @@
+ssh 8612
+
+nexus 8081
+jenkins 8080 50000
+mysql 3306
+redis 6379
+rabbitmq 5672
+rabbitmq-admin 15672 
+
+mc-server 25565
+mc-bedrock-server 19132
+
+frps 7000 31001-31100
+softether 443/tcp 500/udp 992/tcp 1194/tcp 1194/udp 4500/udp 5555/tcp
+v2ray-server 31101 31500-31999
+shadowsocket-server 8388
+shadowsocket-local 1080
+privoxy 8118
+aria2 6800 9100 35500-35599
+aria2-pt 36800 39100 35600-35699
+
+file 33101
+
+端口第四位 0(WEB) 1(网络) 2(软件) 3(输出) 5(输入)

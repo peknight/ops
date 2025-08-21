@@ -1,0 +1,64 @@
+HOST pekctrl
+  Hostname ctrl.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknyc
+  Hostname nyc00.server.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknas
+  Hostname nas.peknight.com
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peknasint
+  Hostname pek-nas
+  Port 22
+  User admin
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekpc
+  Hostname home.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST pekpcint
+  Hostname pek-pc
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+Host github.com
+  Hostname github.com
+  Port 22
+  User git
+  IdentityFile ~/.ssh/id_rsa
+
+HOST git.peknight.com
+  Port 2222
+  HostKeyAlgorithms=+ssh-rsa
+  PubkeyAcceptedAlgorithms +ssh-rsa
+
+HOST peklowriskint
+  Hostname pek-lowrisk
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peklowriskmac
+  Hostname pek-lowrisk-mac
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_rsa
+
+HOST peklowriskfrp
+  Hostname ctrl.peknight.com
+  Port 31061
+  User pek
+  IdentityFile ~/.ssh/id_rsa

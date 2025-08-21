@@ -1,0 +1,71 @@
+{
+  "log" : {
+    "access": "/var/log/v2fly/access.log",
+    "error": "/var/log/v2fly/error.log",
+    "loglevel": "warning"
+  },
+  "routing": {
+    "domainStrategy": "IPOnDemand",
+    "rules": [{
+      "type": "field",
+      "domain": ["geosite:category-ads-all"],
+      "outboundTag": "block"
+    },{
+      "type": "field",
+      "ip": ["geoip:private"],
+      "outboundTag": "direct"
+    }]
+  },
+  "inbounds": [{
+    "port": 1080,
+    "protocol": "socks",
+    "settings": {
+      "auth":"noauth",
+      "udp":true
+    },
+    "sniffing": {
+      "enabled": true,
+      "destOverride": ["http", "tls"]
+    }
+  },{
+    "port": 8118,
+    "protocol": "http",
+    "settings": {
+      "allowTransport": false,
+      "userLevel": 1
+    },
+    "sniffing": {
+      "enabled": true,
+      "destOverride": ["http", "tls"]
+    }
+  }],
+  "outbounds": [{
+    "protocol": "vmess",
+    "settings": {
+      "vnext": [{
+        "address": "www.peknight.com",
+        "port": 443,
+        "users": [{
+          "id": "60ca58e9-003e-4c01-98de-c2223ae49153",
+          "alterId": 64
+        }]
+      }]
+    },
+    "streamSettings": {
+      "network": "ws",
+      "security": "tls",
+      "wsSettings": {
+        "path": "/v2fly"
+      }
+    },
+    "mux": {"enabled": true}
+  },{
+    "protocol": "freedom",
+    "settings": {},
+    "tag": "direct"
+  },{
+    "protocol":"blackhole",
+    "settings": {},
+    "tag": "block"
+  }]
+}

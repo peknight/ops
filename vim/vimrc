@@ -1,0 +1,80 @@
+set nocompatible " 关闭vi兼容模式
+filetype plugin on
+runtime macros/matchit.vim
+syntax on
+
+set encoding=utf8 " 使用UTF-8编码
+set fileencodings=utf8,gbk " 打开文件时尝试使用的解码字符集
+source $VIMRUNTIME/delmenu.vim
+source $VIMRUNTIME/menu.vim
+
+set incsearch " 预览查找
+set hidden " 切换缓冲区不用保存
+set hlsearch " 搜索时高亮显示被找到的文本
+set nowrap " 不自动换行
+set number " 显示行号
+set pastetoggle=<F5> " 粘贴禁用自动缩进等
+
+" 缩进
+set expandtab " 使用tab长度的空格代替tab
+set shiftround " 缩进时保持空格数为tab长度的整数倍
+set shiftwidth=4 " 设定 << 和 >> 命令移动时的宽度为4
+set softtabstop=4 " 使得按退格键时可以一次删掉4个空格
+set tabstop=4 " 设定 tab 长度为4
+set cindent " 使用C语言风格自动缩进
+set smartindent " 智能缩进
+
+" 打开VIMRC文件
+nnoremap <leader>ev :vsplit $MYVIMRC<cr>
+" 加载VIMRC文件
+nnoremap <leader>sv :source $MYVIMRC<cr>
+" 切换到前一个缓冲区
+nnoremap <silent> [b :bprevious<CR>
+" 切换到后一个缓冲区
+nnoremap <silent> ]b :bnext<CR>
+" 切换到第一个缓冲区
+nnoremap <silent> [B :bfirst<CR>
+" 切换到最后一个缓冲区
+nnoremap <silent> ]B :blast<CR>
+" 清除高亮
+nnoremap <silent> <C-l> :<C-u>nohlsearch<CR><C-l>
+
+nnoremap & :&&<CR>
+xnoremap & :&&<CR>
+
+" * # 查找选中的文本
+xnoremap * :<C-u>call <SID>VSetSearch('/')<CR>/<C-R>=@/<CR><CR>
+xnoremap # :<C-u>call <SID>VSetSearch('?')<CR>?<C-R>=@/<CR><CR>
+
+function! s:VSetSearch(cmdtype)
+  let temp = @s
+  norm! gv"sy
+  let @/ = '\V' . substitute(escape(@s, a:cmdtype.'\'), '\n', '\\n', 'g')
+  let @s = temp
+endfunction
+
+" vim版本低于8时，使用elflord配色方案
+if version < 800
+  colorscheme elflord
+endif
+
+" Unicode解码
+command! DecodeUnicode %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
+
+" JSON 格式化并解码Unicode
+function! s:JsonFormatAndUnicodeDecode()
+  " JSON格式化
+  %!python3 -m json.tool
+  " Unicode解码
+  %s/\\u\([0-9a-fA-F]\{4}\)/\=nr2char(str2nr(submatch(1), 16))/ge
+  " 折叠
+  set foldmethod=indent
+  " 展开折叠
+  normal! zR
+  " 到首行
+  normal! gg
+endfunction
+
+" JSON格式化
+command! JsonFormat call <SID>JsonFormatAndUnicodeDecode()
+

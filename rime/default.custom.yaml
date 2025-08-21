@@ -1,0 +1,11 @@
+patch:
+  schema_list:
+    - schema: wubi86
+    - schema: luna_pinyin
+  key_binder/bindings:
+    - { accept: "Shift+space", toggle: noop, when: always} # 取消全半角切换
+    - { when: paging, accept: bracketleft, send: Page_Up } # 翻页
+    - { when: has_menu, accept: bracketright, send: Page_Down } # 翻页
+  ascii_composer/switch_key:
+    Shift_L: clear # 左shift清空输入并切换到英文
+    Shift_R: commit_code # 右shift提交输入并切换到英文

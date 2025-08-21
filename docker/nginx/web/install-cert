@@ -1,0 +1,2 @@
+#!/bin/bash
+docker exec pek-acme-daemon --install-cert -d peknight.com -d *.peknight.com -d *.server.peknight.com -d *.v6.server.peknight.com -d *.ctrl.peknight.com -d *.cdn.peknight.com -d *.v6.cdn.peknight.com --fullchainpath /install/nginx.crt --keypath /install/nginx.key --ecc
