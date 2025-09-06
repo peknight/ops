@@ -1,12 +1,5 @@
 ### 安装百度网盘
 
-```shell
-git clone https://aur.archlinux.org/baidunetdisk-bin.git
-cd baidunetdisk-bin
-makepkg -si
-cd ../
-```
-
 ### 美化sddm login theme
 
 #### 安装 sugar-candy
@@ -17,7 +10,6 @@ cd ../
 ```shell
 sudo pacman -Sy qt5-graphicaleffects qt5-quickcontrols2
 ```
-
 
 ### 安装dictd
 

@@ -1,7 +1,3 @@
 # zsh plugins
 # plugins=(git archlinux docker sudo systemd z)
 # setopt rmstarsilent
-if [ $TILIX_ID ] || [ $VTE_VERSION ]; then
-    source /etc/profile.d/vte.sh
-fi
-export PATH=.:$PATH
