@@ -62,3 +62,27 @@ HOST peklowriskfrp
   Port 31061
   User pek
   IdentityFile ~/.ssh/id_rsa
+
+HOST lowriskprod
+  Hostname 192.168.5.45
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa
+
+HOST lowrisktest
+  Hostname 192.168.5.40
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa
+
+HOST lowriskpre
+  Hostname 192.168.5.24
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa
+
+HOST lowriskskywalking
+  Hostname 192.168.5.41
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa
