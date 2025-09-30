@@ -1,4 +1,4 @@
-FROM eclipse-temurin:24.0.1_9-jdk-alpine
+FROM eclipse-temurin:25_36-jdk-alpine-3.22
 MAINTAINER peknight <JKpeknight@gmail.com>
 
 ENV VERSION v1.21.8
