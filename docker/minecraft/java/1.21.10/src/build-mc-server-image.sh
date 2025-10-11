@@ -1,0 +1,3 @@
+#!/bin/bash
+wget "https://piston-data.mojang.com/v1/objects/95495a7f485eedd84ce928cef5e223b757d2f764/server.jar" -O minecraft_server.1.21.10.jar
+docker build -t pek/minecraft-server:1.21.10 .
