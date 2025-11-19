@@ -1,7 +1,7 @@
-FROM ubuntu:25.10
+FROM ubuntu:26.04
 MAINTAINER peknight <JKpeknight@gmail.com>
 
-ENV VERSION v1.21.114.1
+ENV VERSION v1.21.123.2
 ENV LD_LIBRARY_PATH /usr/local/minecraft
 
 WORKDIR /usr/local/minecraft
