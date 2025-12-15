@@ -69,6 +69,12 @@ HOST lowriskprod
   User root
   IdentityFile ~/.ssh/id_rsa
 
+HOST lowriskrcms
+  Hostname 192.168.5.245
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_rsa
+
 HOST lowrisktest
   Hostname 192.168.1.173
   Port 22
