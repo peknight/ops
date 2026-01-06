@@ -1,5 +1,5 @@
 #!/bin/bash
-frp_version=0.64.0
+frp_version=0.66.0
 while getopts :v: opt
 do
     case "$opt" in

@@ -1,4 +1,4 @@
-FROM alpine:3.22.1
+FROM alpine:3.23.2
 MAINTAINER peknight <JKpeknight@gmail.com>
 
 WORKDIR /frps
