@@ -17,7 +17,7 @@ fi
 #  echo "copy v2ray.key to ${cert_dir}"
 #  exit 1
 #fi
-log_dir=$HOME/software/v2ray/server/log
+log_dir=$HOME/opt/v2ray/server/logs
 if [ ! -d "$log_dir" ]; then
   mkdir -p $log_dir
 fi
