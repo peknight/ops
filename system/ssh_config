@@ -1,11 +1,11 @@
-HOST pekctrl
-  Hostname ctrl.peknight.com
+HOST pekcenter
+  Hostname center.peknight.com
   Port 8612
   User pek
   IdentityFile ~/.ssh/id_rsa
 
-HOST peknyc
-  Hostname nyc00.server.peknight.com
+HOST pekoversea
+  Hostname oversea.peknight.com
   Port 8612
   User pek
   IdentityFile ~/.ssh/id_rsa
