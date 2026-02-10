@@ -475,10 +475,10 @@ git config --global pull.rebase false
 
 ```shell
 git clone git@github.com:peknight/ops.git
-ln -s $HOME/ops/system/authorized_keys $HOME/.ssh/authorized_keys
-ln -s $HOME/ops/system/ssh_config $HOME/.ssh/config
-ln -s $HOME/ops/vim/vimrc $HOME/.vimrc
-ln -s $HOME/ops/zsh/themes/pek-robbyrussell.zsh-theme $HOME/.oh-my-zsh/custom/themes/pek-robbyrussell.zsh-theme
+ln -s $HOME/Projects/peknight/ops/system/authorized_keys $HOME/.ssh/authorized_keys
+ln -s $HOME/Projects/peknight/ops/system/ssh_config $HOME/.ssh/config
+ln -s $HOME/Projects/peknight/ops/vim/vimrc $HOME/.vimrc
+ln -s $HOME/Projects/peknight/ops/zsh/themes/pek-robbyrussell.zsh-theme $HOME/.oh-my-zsh/custom/themes/pek-robbyrussell.zsh-theme
 ```
 
 #### 配置rime
@@ -491,7 +491,7 @@ cd plum
 bash rime-install :preset
 bash rime-install wubi pinyin-simp
 cd ../..
-ln -s $HOME/ops/rime/default.custom.yaml $HOME/.config/ibus/rime/default.custom.yaml
+ln -s $HOME/Projects/peknight/ops/rime/default.custom.yaml $HOME/.config/ibus/rime/default.custom.yaml
 ```
 
 ### 安装AUR软件
