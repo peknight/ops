@@ -59,7 +59,7 @@ HOST peklowriskmac
 
 HOST peklowriskfrp
   Hostname ctrl.peknight.com
-  Port 31061
+  Port 31062
   User pek
   IdentityFile ~/.ssh/id_rsa
 
