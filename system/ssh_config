@@ -58,7 +58,7 @@ HOST peklowriskmac
   IdentityFile ~/.ssh/id_rsa
 
 HOST peklowriskfrp
-  Hostname ctrl.peknight.com
+  Hostname center.peknight.com
   Port 31062
   User pek
   IdentityFile ~/.ssh/id_rsa
