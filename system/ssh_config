@@ -40,11 +40,6 @@ Host github.com
   User git
   IdentityFile ~/.ssh/id_ed25519
 
-HOST git.peknight.com
-  Port 2222
-  HostKeyAlgorithms=+ssh-rsa
-  PubkeyAcceptedAlgorithms +ssh-rsa
-
 HOST peklowriskint
   Hostname pek-lowrisk
   Port 8612
