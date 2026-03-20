@@ -229,12 +229,6 @@ pacman -Sy --noconfirm mesa
 pacman -Sy xfce4 xfce4-goodies sddm
 ```
 
-* 安装图形界面相关程序，docker wechat用
-
-```shell
-pacman -Sy --noconfirm xorg wmctrl xdotool
-```
-
 * 笔记本电源管理
 
 ```shell
@@ -269,7 +263,7 @@ reboot
 * 安装开发环境常用工具：bash自动补全、zsh自动补全、git、wget、neofetch、定时任务cronie、剪贴板工具xclip、sshfs远程挂载、rsync同步、tree查看目录结构 
 
 ```shell
-pacman -Sy bash-completion zsh-completions git docker docker-compose wget neofetch cronie xclip sshfs rsync tree
+pacman -Sy bash-completion zsh-completions git docker docker-compose wget fastfetch cronie xclip sshfs rsync tree
 ```
 
 * 安装解压缩工具
@@ -350,18 +344,6 @@ pacman -Sy plank
 
 ```shell
 pacman -Sy goldendict
-```
-
-* 可选远程工具
-
-```shell
-pacman -Sy remmina freerdp
-```
-
-* 忘了是做什么用的包，dialog与wireless_tools无线网络工具好像用不到了
-
-```shell
-pacman -Sy pacman-contrib dialog wireless_tools
 ```
 
 ### 配置程序
