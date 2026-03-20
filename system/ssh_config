@@ -2,43 +2,43 @@ HOST pekcenter
   Hostname center.peknight.com
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST pekoversea
   Hostname oversea.peknight.com
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST peknas
   Hostname nas.peknight.com
   Port 22
   User admin
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST peknasint
   Hostname pek-nas
   Port 22
   User admin
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST pekpc
   Hostname home.peknight.com
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST pekpcint
   Hostname pek-pc
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 Host github.com
   Hostname github.com
   Port 22
   User git
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST git.peknight.com
   Port 2222
@@ -49,52 +49,52 @@ HOST peklowriskint
   Hostname pek-lowrisk
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST peklowriskmac
   Hostname pek-lowrisk-mac
   Port 8612
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST peklowriskfrp
   Hostname center.peknight.com
   Port 31062
   User pek
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowriskprod
   Hostname 192.168.5.45
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowriskrcms
   Hostname 192.168.5.245
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowrisktest
   Hostname 192.168.1.173
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowrisktestold
   Hostname 192.168.5.40
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowriskpre
   Hostname 192.168.5.24
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
 
 HOST lowriskskywalking
   Hostname 192.168.5.41
   Port 22
   User root
-  IdentityFile ~/.ssh/id_rsa
+  IdentityFile ~/.ssh/id_ed25519
