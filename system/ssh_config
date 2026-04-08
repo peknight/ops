@@ -64,8 +64,14 @@ HOST lowriskprod
   User root
   IdentityFile ~/.ssh/id_ed25519
 
-HOST lowriskrcms
+HOST lowriskbackup
   Hostname 192.168.5.245
+  Port 22
+  User root
+  IdentityFile ~/.ssh/id_ed25519
+
+HOST lowriskrcms
+  Hostname 192.168.1.178
   Port 22
   User root
   IdentityFile ~/.ssh/id_ed25519
