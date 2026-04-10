@@ -10,6 +10,12 @@ HOST pekoversea
   User pek
   IdentityFile ~/.ssh/id_ed25519
 
+HOST peksirius
+  Hostname sirius.peknight.com
+  Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_ed25519
+
 HOST peknas
   Hostname nas.peknight.com
   Port 22
