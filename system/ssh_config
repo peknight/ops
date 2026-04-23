@@ -28,6 +28,12 @@ HOST peknasint
   User admin
   IdentityFile ~/.ssh/id_ed25519
 
+HOST peknasfrp
+  Hostname center.peknight.com
+  Port 31011
+  User admin
+  IdentityFile ~/.ssh/id_ed25519
+
 HOST pekpc
   Hostname home.peknight.com
   Port 8612
@@ -37,6 +43,12 @@ HOST pekpc
 HOST pekpcint
   Hostname pek-pc
   Port 8612
+  User pek
+  IdentityFile ~/.ssh/id_ed25519
+
+HOST pekpcfrp
+  Hostname center.peknight.com
+  Port 31021
   User pek
   IdentityFile ~/.ssh/id_ed25519
 
