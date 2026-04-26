@@ -52,6 +52,12 @@ HOST pekpcfrp
   User pek
   IdentityFile ~/.ssh/id_ed25519
 
+HOST pekmacfrp
+  Hostname center.peknight.com
+  Port 31031
+  User pek
+  IdentityFile ~/.ssh/id_ed25519
+
 Host github.com
   Hostname github.com
   Port 22
