@@ -281,13 +281,13 @@ pacman -Sy tcpdump nmap traceroute wireshark-qt
 * 安装字体，参考[General recommendations](https://wiki.archlinux.org/index.php/General_recommendations_(%E7%AE%80%E4%BD%93%E4%B8%AD%E6%96%87)#%E5%AD%97%E4%BD%93)
 
 ```shell
-pacman -Sy ttf-dejavu ttf-liberation wqy-zenhei wqy-microhei
+pacman -Sy ttf-dejavu ttf-liberation wqy-zenhei wqy-microhei noto-fonts-emoji
 ```
 
 * 其它可选字体
 
 ```shell
-pacman -Sy noto-fonts-cjk noto-fonts-emoji adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts 
+pacman -Sy noto-fonts-cjk adobe-source-han-sans-otc-fonts adobe-source-han-serif-otc-fonts adobe-source-han-serif-cn-fonts adobe-source-han-serif-tw-fonts adobe-source-han-sans-cn-fonts adobe-source-han-sans-tw-fonts
 ```
 
 * 安装终端
