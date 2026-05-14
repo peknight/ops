@@ -117,3 +117,11 @@ HOST lowriskskywalking
   Port 22
   User root
   IdentityFile ~/.ssh/id_ed25519
+
+
+HOST lowriskopenclaw
+  Hostname 192.168.10.73
+  Port 22
+  User lowrisk
+  IdentityFile ~/.ssh/id_ed25519
+
