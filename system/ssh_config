@@ -100,13 +100,13 @@ HOST lowrisktest
   User root
   IdentityFile ~/.ssh/id_ed25519
 
-HOST lowrisktestold
+HOST lowriskpre
   Hostname 192.168.5.40
   Port 22
   User root
   IdentityFile ~/.ssh/id_ed25519
 
-HOST lowriskpre
+HOST lowriskrcmspre
   Hostname 192.168.5.24
   Port 22
   User root
